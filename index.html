@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhishek Kumar — B.Tech CSE (AI &amp; ML) | NST ADYPU</title>
+  <meta name="description" content="Personal portfolio of Abhishek Kumar, 1st-Semester B.Tech CSE (AI & ML) student at Newton School of Technology (NST), ADYPU." />
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: '#FAF9F6',
+            surface: '#FFFFFF',
+            ink: '#111827',
+            muted: '#4B5563',
+            accent: '#1E3A8A',
+            accentHover: '#172554',
+            hairline: '#E5E7EB'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Editorial typography & strong keyboard accessibility focus indicators */
+    body {
+      background-color: #FAF9F6;
+      color: #111827;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* High-visibility focus ring for Tab / Enter keyboard navigation */
+    a:focus-visible,
+    button:focus-visible,
+    input:focus-visible,
+    textarea:focus-visible,
+    select:focus-visible {
+      outline: 2px solid #1E3A8A;
+      outline-offset: 3px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-blue-100 selection:text-ink">
+
+  <!-- Skip to Main Content for Keyboard & Screen Reader Accessibility -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-accent focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:text-sm focus:font-medium">
+    Skip to main content
+  </a>
+
+  <!-- Unobtrusive Edit Mode Active Banner -->
+  <div id="edit-mode-banner" class="hidden bg-accent text-white border-b border-blue-950" role="region" aria-label="Edit Mode Controls">
+    <div class="max-w-3xl mx-auto px-5 sm:px-8 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <div class="text-xs sm:text-sm">
+        <span class="font-mono uppercase tracking-wider font-medium bg-white/15 px-2 py-0.5 rounded mr-2">Edit Mode Active</span>
+        <span class="text-blue-100">Changes save to this browser's <code class="font-mono text-white">localStorage</code> only.</span>
+      </div>
+      <div class="flex flex-wrap items-center gap-2">
+        <button type="button" id="btn-export-json" class="px-3 py-1.5 text-xs font-medium bg-white/10 hover:bg-white/20 text-white rounded border border-white/25 transition-colors">
+          Export Data JSON
+        </button>
+        <button type="button" id="btn-reset-default" class="px-3 py-1.5 text-xs font-medium bg-white/10 hover:bg-red-600/80 text-white rounded border border-white/25 transition-colors">
+          Reset to Default
+        </button>
+        <button type="button" id="btn-exit-edit" class="px-3 py-1.5 text-xs font-medium bg-white text-accent hover:bg-blue-50 rounded transition-colors">
+          Done Editing
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sticky Top Navigation -->
+  <header class="sticky top-0 z-40 bg-paper/95 backdrop-blur-sm border-b border-hairline">
+    <nav class="max-w-3xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-4" aria-label="Primary Navigation">
+      <a href="#top" class="font-semibold text-ink tracking-tight text-base hover:text-accent transition-colors shrink-0">
+        Abhishek Kumar
+      </a>
+      <ul class="flex items-center gap-4 sm:gap-7 text-sm font-medium text-muted">
+        <li><a href="#about" class="hover:text-ink transition-colors py-1">About</a></li>
+        <li><a href="#projects" class="hover:text-ink transition-colors py-1">Projects</a></li>
+        <li><a href="#skills" class="hover:text-ink transition-colors py-1">Skills</a></li>
+        <li><a href="#contact" class="hover:text-ink transition-colors py-1">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main-content" class="flex-1">
+
+    <!-- 1. Hero Section: 10-Second Visitor Clarity -->
+    <section id="top" class="max-w-3xl mx-auto px-5 sm:px-8 pt-14 pb-16 sm:pt-20 sm:pb-24 border-b border-hairline">
+      <p class="font-mono text-xs sm:text-sm uppercase tracking-wider text-accent font-medium mb-4">
+        B.Tech CSE (AI &amp; ML) &middot; 1st Semester @ NST ADYPU
+      </p>
+      <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-ink leading-[1.15] mb-5">
+        Abhishek Kumar
+      </h1>
+      <p class="text-base sm:text-lg text-muted leading-relaxed max-w-2xl mb-8">
+        First-year computer science student building strong foundations in Python, C++, and practical software tools that solve everyday organizational problems.
+      </p>
+      <div class="flex flex-wrap items-center gap-3.5">
+        <a href="#projects" class="inline-flex items-center justify-center px-5 py-3 text-sm font-medium rounded-md bg-accent text-white hover:bg-accentHover transition-colors">
+          View Projects
+        </a>
+        <a href="#contact" class="inline-flex items-center justify-center px-5 py-3 text-sm font-medium rounded-md bg-surface text-ink border border-hairline hover:border-ink/40 transition-colors">
+          Contact Me
+        </a>
+      </div>
+    </section>
+
+    <!-- 2. About Section -->
+    <section id="about" class="max-w-3xl mx-auto px-5 sm:px-8 py-14 sm:py-20 border-b border-hairline">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="font-mono text-xs uppercase tracking-widest text-muted font-medium">
+          01 / About
+        </h2>
+      </div>
+
+      <!-- Read-Only About View -->
+      <div id="about-display" class="space-y-4 text-base text-ink/90 leading-relaxed max-w-2xl"></div>
+
+      <!-- Edit Mode About Form -->
+      <div id="about-editor" class="hidden mt-4 bg-surface border border-hairline rounded-lg p-4 sm:p-5">
+        <label for="about-textarea" class="block font-mono text-xs uppercase tracking-wider text-muted mb-2">
+          Edit About Section (Separate paragraphs with a blank line)
+        </label>
+        <textarea id="about-textarea" rows="5" class="w-full rounded-md border border-hairline bg-paper px-3.5 py-2.5 text-sm text-ink leading-relaxed focus:border-accent"></textarea>
+        <div class="mt-3 flex items-center justify-between gap-3">
+          <span class="text-xs text-muted">Keep it truthful and grounded in your real experience.</span>
+          <button type="button" id="btn-save-about" class="px-4 py-2 text-xs font-medium rounded-md bg-accent text-white hover:bg-accentHover transition-colors">
+            Save About Text
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Projects Section -->
+    <section id="projects" class="max-w-3xl mx-auto px-5 sm:px-8 py-14 sm:py-20 border-b border-hairline">
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-8">
+        <h2 class="font-mono text-xs uppercase tracking-widest text-muted font-medium">
+          02 / Projects
+        </h2>
+        <button type="button" id="btn-open-add-project" class="hidden px-3.5 py-1.5 text-xs font-medium rounded-md bg-accent text-white hover:bg-accentHover transition-colors">
+          + Add Real Project
+        </button>
+      </div>
+
+      <!-- Add / Edit Project Form (Hidden unless triggered in Edit Mode) -->
+      <form id="project-form-container" class="hidden mb-10 bg-surface border border-hairline rounded-lg p-5 sm:p-6 space-y-4" novalidate>
+        <div class="flex items-center justify-between border-b border-hairline pb-3">
+          <h3 id="project-form-heading" class="text-sm font-semibold text-ink">Add New Project</h3>
+          <button type="button" id="btn-cancel-project" class="text-xs text-muted hover:text-ink underline">
+            Cancel
+          </button>
+        </div>
+
+        <input type="hidden" id="project-edit-id" value="" />
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label for="project-title" class="block text-xs font-medium text-ink mb-1">Project Title *</label>
+            <input type="text" id="project-title" required placeholder="e.g., Library Book Organizer" class="w-full rounded-md border border-hairline bg-paper px-3 py-2 text-sm text-ink" />
+          </div>
+          <div>
+            <label for="project-status" class="block text-xs font-medium text-ink mb-1">Status Badge *</label>
+            <select id="project-status" class="w-full rounded-md border border-hairline bg-paper px-3 py-2 text-sm text-ink">
+              <option value="Built at Hacktoberfest">Built at Hacktoberfest</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Completed">Completed</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="project-problem" class="block text-xs font-medium text-ink mb-1">Problem / Context *</label>
+          <textarea id="project-problem" rows="2" required placeholder="What real problem or class task did this address?" class="w-full rounded-md border border-hairline bg-paper px-3 py-2 text-sm text-ink"></textarea>
+        </div>
+
+        <div>
+          <label for="project-contribution" class="block text-xs font-medium text-ink mb-1">What I Built *</label>
+          <textarea id="project-contribution" rows="2" required placeholder="Describe what you specifically built or contributed." class="w-full rounded-md border border-hairline bg-paper px-3 py-2 text-sm text-ink"></textarea>
+        </div>
+
+        <div>
+          <label for="project-url" class="block text-xs font-medium text-ink mb-1">
+            Real Project URL <span class="text-muted font-normal">(Optional — leave blank if none; no dead # links will be created)</span>
+          </label>
+          <input type="url" id="project-url" placeholder="https://github.com/username/repository" class="w-full rounded-md border border-hairline bg-paper px-3 py-2 text-sm text-ink font-mono" />
+          <p id="project-form-error" class="hidden mt-1.5 text-xs text-red-700 font-medium"></p>
+        </div>
+
+        <div class="pt-1 flex items-center justify-end gap-2.5">
+          <button type="submit" class="px-4 py-2 text-xs font-medium rounded-md bg-accent text-white hover:bg-accentHover transition-colors">
+            Save Project
+          </button>
+        </div>
+      </form>
+
+      <!-- Projects List Container -->
+      <div id="projects-list" class="space-y-8"></div>
+    </section>
+
+    <!-- 4. Skills Section -->
+    <section id="skills" class="max-w-3xl mx-auto px-5 sm:px-8 py-14 sm:py-20 border-b border-hairline">
+      <div class="flex items-center justify-between mb-6">
+        <h2 class="font-mono text-xs uppercase tracking-widest text-muted font-medium">
+          03 / Skills &amp; Practice
+        </h2>
+      </div>
+
+      <p class="text-sm text-muted mb-5">
+        Core languages and technical activities I actively work with:
+      </p>
+
+      <!-- Verified Skills List -->
+      <ul id="skills-list" class="flex flex-wrap gap-2.5"></ul>
+
+      <!-- Edit Mode Skill Adder -->
+      <form id="skill-editor" class="hidden mt-5 pt-4 border-t border-hairline flex flex-col sm:flex-row gap-2.5 max-w-md">
+        <label for="new-skill-input" class="sr-only">Add verified skill</label>
+        <input type="text" id="new-skill-input" placeholder="Add a verified skill (e.g., Git)" class="flex-1 rounded-md border border-hairline bg-surface px-3 py-2 text-sm text-ink" />
+        <button type="submit" class="px-4 py-2 text-xs font-medium rounded-md bg-accent text-white hover:bg-accentHover transition-colors">
+          Add Skill
+        </button>
+      </form>
+    </section>
+
+    <!-- 5. Contact Section (Privacy-Safe: Email Only) -->
+    <section id="contact" class="max-w-3xl mx-auto px-5 sm:px-8 py-14 sm:py-20">
+      <h2 class="font-mono text-xs uppercase tracking-widest text-muted font-medium mb-6">
+        04 / Contact
+      </h2>
+
+      <div class="bg-surface border border-hairline rounded-lg p-6 sm:p-8">
+        <h3 class="text-xl sm:text-2xl font-semibold text-ink tracking-tight mb-2">
+          Get in touch
+        </h3>
+        <p class="text-sm sm:text-base text-muted leading-relaxed max-w-xl mb-6">
+          Open to project collaborations, mentor feedback, and entry-level technical discussions. The most reliable way to reach me is via email.
+        </p>
+
+        <div class="flex flex-col sm:flex-row sm:items-center gap-3">
+          <a href="mailto:abhishekkumar88462@gmail.com" class="inline-flex items-center justify-center px-5 py-3 text-sm font-medium rounded-md bg-accent text-white hover:bg-accentHover transition-colors break-all">
+            abhishekkumar88462@gmail.com
+          </a>
+
+          <button type="button" id="btn-copy-email" class="inline-flex items-center justify-center px-4 py-3 text-sm font-medium rounded-md bg-paper text-ink border border-hairline hover:border-ink/40 transition-colors">
+            Copy Email
+          </button>
+        </div>
+
+        <p id="copy-feedback" role="status" aria-live="polite" class="mt-3 text-xs font-mono text-accent h-4"></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast Notification (Replaces alert/confirm) -->
+  <div id="status-toast" role="status" aria-live="polite" class="fixed bottom-5 right-5 z-50 hidden max-w-xs bg-ink text-white text-xs font-medium px-4 py-3 rounded-md shadow-lg border border-white/10"></div>
+
+  <!-- JSON Export Modal (For inspecting or copying updated portfolio data) -->
+  <div id="json-modal" class="fixed inset-0 z-50 hidden bg-ink/50 backdrop-blur-xs flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="json-modal-title">
+    <div class="bg-surface border border-hairline rounded-lg max-w-xl w-full p-5 sm:p-6 shadow-xl">
+      <div class="flex items-center justify-between border-b border-hairline pb-3 mb-3">
+        <h3 id="json-modal-title" class="text-sm font-semibold text-ink">Export Portfolio Data (JSON)</h3>
+        <button type="button" id="btn-close-json" class="text-xs text-muted hover:text-ink underline">Close</button>
+      </div>
+      <p class="text-xs text-muted mb-3 leading-relaxed">
+        Storage reality check: Edits made in Edit Mode are saved in <code class="font-mono text-ink">localStorage</code> for this browser only. Copy this JSON to update <code class="font-mono text-ink">DEFAULT_PORTFOLIO_DATA</code> in your source file when publishing updates for all visitors.
+      </p>
+      <textarea id="json-export-output" readonly rows="10" class="w-full rounded-md border border-hairline bg-paper p-3 font-mono text-xs text-ink"></textarea>
+      <div class="mt-3 flex items-center justify-between">
+        <span id="json-copy-status" class="text-xs font-mono text-accent"></span>
+        <button type="button" id="btn-copy-json" class="px-4 py-2 text-xs font-medium rounded-md bg-accent text-white hover:bg-accentHover transition-colors">
+          Copy JSON
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer with Discreet Edit Mode Toggle -->
+  <footer class="border-t border-hairline bg-paper">
+    <div class="max-w-3xl mx-auto px-5 sm:px-8 py-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-xs text-muted">
+      <div>
+        <p class="text-ink font-medium">Abhishek Kumar</p>
+        <p class="mt-0.5">B.Tech CSE (AI &amp; ML), 1st Semester &middot; NST ADYPU</p>
+      </div>
+
+      <div class="flex flex-col sm:items-end gap-1.5">
+        <button type="button" id="btn-toggle-edit" class="font-mono text-xs text-muted hover:text-accent underline underline-offset-4 transition-colors self-start sm:self-end">
+          Edit Mode: Off
+        </button>
+        <p class="text-[11px] text-muted/80">
+          Browser edits persist locally via <code class="font-mono">localStorage</code>.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Structured Portfolio Data & Application Logic -->
+  <script>
+    /**
+     * =========================================================================
+     * DEFAULT PORTFOLIO DATA STORE
+     * Single source of truth for Abhishek Kumar's verified credentials.
+     * No private phone numbers, placeholder links (#), or fabricated metrics.
+     * =========================================================================
+     */
+    const DEFAULT_PORTFOLIO_DATA = {
+      about: [
+        "I am a first-semester B.Tech Computer Science and Engineering (AI & ML) student at Newton School of Technology (NST), ADYPU, focused on building strong programming fundamentals in Python and C++. Outside of coursework and coding, I enjoy reading books."
+      ],
+      projects: [
+        {
+          id: "life-tracker-hacktoberfest",
+          title: "Life Tracker",
+          status: "Built at Hacktoberfest",
+          problem: "Keeping track of daily routines, study sessions, and personal habits consistently in a single distraction-free place.",
+          contribution: "Built a structured tracker during Hacktoberfest to log daily habits, organize tasks, and review progress across routines.",
+          url: ""
+        }
+      ],
+      skills: [
+        "Python",
+        "C++",
+        "Open Source / Hacktoberfest Participation"
+      ]
+    };
+
+    const STORAGE_KEY = "abhishek_portfolio_v1";
+    let isEditMode = false;
+    let portfolioData = loadPortfolioData();
+
+    /**
+     * Load portfolio data from localStorage with safe fallback to defaults.
+     */
+    function loadPortfolioData() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return cloneData(DEFAULT_PORTFOLIO_DATA);
+        const parsed = JSON.parse(raw);
+        if (!Array.isArray(parsed.about) || !Array.isArray(parsed.projects) || !Array.isArray(parsed.skills)) {
+          return cloneData(DEFAULT_PORTFOLIO_DATA);
+        }
+        return parsed;
+      } catch (err) {
+        return cloneData(DEFAULT_PORTFOLIO_DATA);
+      }
+    }
+
+    function savePortfolioData() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(portfolioData));
+      } catch (err) {
+        showToast("Unable to save to localStorage in this browser context.");
+      }
+    }
+
+    function cloneData(obj) {
+      return JSON.parse(JSON.stringify(obj));
+    }
+
+    /**
+     * Safe text escaping helper for dynamic rendering.
+     */
+    function escapeHTML(str) {
+      const div = document.createElement("div");
+      div.textContent = str;
+      return div.innerHTML;
+    }
+
+    /**
+     * Non-blocking toast message (replaces alert/confirm).
+     */
+    let toastTimer = null;
+    function showToast(message) {
+      const toast = document.getElementById("status-toast");
+      if (!toast) return;
+      toast.textContent = message;
+      toast.classList.remove("hidden");
+      clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => {
+        toast.classList.add("hidden");
+      }, 3200);
+    }
+
+    /**
+     * Render About section paragraphs & sync Edit Mode textarea.
+     */
+    function renderAbout() {
+      const container = document.getElementById("about-display");
+      const textarea = document.getElementById("about-textarea");
+      container.innerHTML = "";
+
+      portfolioData.about.forEach((paragraph) => {
+        const p = document.createElement("p");
+        p.textContent = paragraph;
+        container.appendChild(p);
+      });
+
+      if (textarea) {
+        textarea.value = portfolioData.about.join("\n\n");
+      }
+    }
+
+    /**
+     * Render Projects list with honest link states (never dead '#' links).
+     */
+    function renderProjects() {
+      const list = document.getElementById("projects-list");
+      list.innerHTML = "";
+
+      if (portfolioData.projects.length === 0) {
+        list.innerHTML = `
+          <p class="text-sm text-muted border border-dashed border-hairline rounded-lg p-6">
+            No projects listed yet. Enable Edit Mode in the footer to add a real project.
+          </p>
+        `;
+        return;
+      }
+
+      portfolioData.projects.forEach((project) => {
+        const article = document.createElement("article");
+        article.className = "bg-surface border border-hairline rounded-lg p-5 sm:p-7 transition-colors";
+
+        const hasValidUrl = project.url && /^https?:\/\//i.test(project.url.trim());
+        const linkMarkup = hasValidUrl
+          ? `<a href="${escapeHTML(project.url.trim())}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-accent hover:text-accentHover underline underline-offset-4">
+              View Source / Project &rarr;
+            </a>`
+          : `<span class="text-xs font-mono text-muted">Repository / demo link available on request</span>`;
+
+        const editControlsMarkup = isEditMode
+          ? `<div class="mt-4 pt-3 border-t border-hairline flex items-center gap-3">
+              <button type="button" data-action="edit-project" data-id="${escapeHTML(project.id)}" class="text-xs font-medium text-accent hover:underline">
+                Edit Project
+              </button>
+              <button type="button" data-action="delete-project" data-id="${escapeHTML(project.id)}" class="text-xs font-medium text-red-700 hover:underline">
+                Delete
+              </button>
+            </div>`
+          : "";
+
+        article.innerHTML = `
+          <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
+            <h3 class="text-lg sm:text-xl font-semibold text-ink tracking-tight">
+              ${escapeHTML(project.title)}
+            </h3>
+            <span class="font-mono text-[11px] uppercase tracking-wider px-2.5 py-1 rounded bg-paper border border-hairline text-ink/80">
+              ${escapeHTML(project.status)}
+            </span>
+          </div>
+
+          <div class="space-y-2.5 text-sm sm:text-[15px] text-ink/90 leading-relaxed mb-4">
+            <p><span class="font-medium text-ink">Problem:</span> ${escapeHTML(project.problem)}</p>
+            <p><span class="font-medium text-ink">What I Built:</span> ${escapeHTML(project.contribution)}</p>
+          </div>
+
+          <div>${linkMarkup}</div>
+          ${editControlsMarkup}
+        `;
+
+        list.appendChild(article);
+      });
+    }
+
+    /**
+     * Render verified Skills list (with remove buttons in Edit Mode).
+     */
+    function renderSkills() {
+      const list = document.getElementById("skills-list");
+      list.innerHTML = "";
+
+      portfolioData.skills.forEach((skill, index) => {
+        const li = document.createElement("li");
+        li.className = "inline-flex items-center gap-2 px-3.5 py-2 rounded-md bg-surface border border-hairline text-sm font-medium text-ink";
+
+        const label = document.createElement("span");
+        label.textContent = skill;
+        li.appendChild(label);
+
+        if (isEditMode) {
+          const removeBtn = document.createElement("button");
+          removeBtn.type = "button";
+          removeBtn.setAttribute("aria-label", `Remove ${skill}`);
+          removeBtn.className = "text-xs text-muted hover:text-red-700 font-mono ml-1";
+          removeBtn.textContent = "×";
+          removeBtn.addEventListener("click", () => {
+            portfolioData.skills.splice(index, 1);
+            savePortfolioData();
+            renderSkills();
+            showToast(`Removed "${skill}".`);
+          });
+          li.appendChild(removeBtn);
+        }
+
+        list.appendChild(li);
+      });
+    }
+
+    /**
+     * Toggle Edit Mode UI visibility across sections.
+     */
+    function setEditMode(enabled) {
+      isEditMode = enabled;
+
+      document.getElementById("edit-mode-banner").classList.toggle("hidden", !enabled);
+      document.getElementById("about-editor").classList.toggle("hidden", !enabled);
+      document.getElementById("btn-open-add-project").classList.toggle("hidden", !enabled);
+      document.getElementById("skill-editor").classList.toggle("hidden", !enabled);
+
+      if (!enabled) {
+        closeProjectForm();
+      }
+
+      const toggleBtn = document.getElementById("btn-toggle-edit");
+      toggleBtn.textContent = enabled ? "Edit Mode: On" : "Edit Mode: Off";
+
+      renderProjects();
+      renderSkills();
+    }
+
+    /**
+     * Open Add / Edit Project Form populated with existing or blank fields.
+     */
+    function openProjectForm(project = null) {
+      const form = document.getElementById("project-form-container");
+      const heading = document.getElementById("project-form-heading");
+      const errorEl = document.getElementById("project-form-error");
+
+      errorEl.classList.add("hidden");
+      errorEl.textContent = "";
+
+      if (project) {
+        heading.textContent = "Edit Project";
+        document.getElementById("project-edit-id").value = project.id;
+        document.getElementById("project-title").value = project.title;
+        document.getElementById("project-status").value = project.status;
+        document.getElementById("project-problem").value = project.problem;
+        document.getElementById("project-contribution").value = project.contribution;
+        document.getElementById("project-url").value = project.url || "";
+      } else {
+        heading.textContent = "Add New Real Project";
+        document.getElementById("project-edit-id").value = "";
+        document.getElementById("project-title").value = "";
+        document.getElementById("project-status").value = "In Progress";
+        document.getElementById("project-problem").value = "";
+        document.getElementById("project-contribution").value = "";
+        document.getElementById("project-url").value = "";
+      }
+
+      form.classList.remove("hidden");
+      document.getElementById("project-title").focus();
+    }
+
+    function closeProjectForm() {
+      document.getElementById("project-form-container").classList.add("hidden");
+    }
+
+    /**
+     * Cross-browser clipboard copy helper (uses execCommand fallback for iFrames).
+     */
+    function copyTextSafely(text, onSuccess) {
+      const tempInput = document.createElement("textarea");
+      tempInput.value = text;
+      tempInput.setAttribute("readonly", "");
+      tempInput.style.position = "fixed";
+      tempInput.style.opacity = "0";
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      try {
+        document.execCommand("copy");
+        onSuccess();
+      } catch (err) {
+        showToast("Copy failed—please copy manually.");
+      }
+      document.body.removeChild(tempInput);
+    }
+
+    /**
+     * Initialize all DOM event listeners on load.
+     */
+    document.addEventListener("DOMContentLoaded", () => {
+      renderAbout();
+      renderProjects();
+      renderSkills();
+
+      // Footer & Banner Edit Mode toggles
+      document.getElementById("btn-toggle-edit").addEventListener("click", () => {
+        setEditMode(!isEditMode);
+        showToast(isEditMode ? "Edit Mode enabled." : "Edit Mode closed.");
+      });
+
+      document.getElementById("btn-exit-edit").addEventListener("click", () => {
+        setEditMode(false);
+      });
+
+      // Save About section
+      document.getElementById("btn-save-about").addEventListener("click", () => {
+        const raw = document.getElementById("about-textarea").value.trim();
+        const paragraphs = raw
+          .split(/\n\s*\n/)
+          .map((p) => p.trim())
+          .filter(Boolean);
+
+        if (paragraphs.length === 0) {
+          showToast("About section cannot be empty.");
+          return;
+        }
+
+        portfolioData.about = paragraphs;
+        savePortfolioData();
+        renderAbout();
+        showToast("About section saved locally.");
+      });
+
+      // Open Add Project Form
+      document.getElementById("btn-open-add-project").addEventListener("click", () => {
+        openProjectForm(null);
+      });
+
+      document.getElementById("btn-cancel-project").addEventListener("click", closeProjectForm);
+
+      // Submit Add / Edit Project Form
+      document.getElementById("project-form-container").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const errorEl = document.getElementById("project-form-error");
+        errorEl.classList.add("hidden");
+
+        const editId = document.getElementById("project-edit-id").value.trim();
+        const title = document.getElementById("project-title").value.trim();
+        const status = document.getElementById("project-status").value;
+        const problem = document.getElementById("project-problem").value.trim();
+        const contribution = document.getElementById("project-contribution").value.trim();
+        const url = document.getElementById("project-url").value.trim();
+
+        if (!title || !problem || !contribution) {
+          errorEl.textContent = "Please complete Title, Problem / Context, and What I Built.";
+          errorEl.classList.remove("hidden");
+          return;
+        }
+
+        if (url && !/^https?:\/\//i.test(url)) {
+          errorEl.textContent = "Project URL must start with http:// or https:// (or leave it blank).";
+          errorEl.classList.remove("hidden");
+          return;
+        }
+
+        if (editId) {
+          const idx = portfolioData.projects.findIndex((p) => p.id === editId);
+          if (idx !== -1) {
+            portfolioData.projects[idx] = { id: editId, title, status, problem, contribution, url };
+          }
+          showToast(`Updated "${title}".`);
+        } else {
+          portfolioData.projects.push({
+            id: "proj-" + Date.now(),
+            title,
+            status,
+            problem,
+            contribution,
+            url
+          });
+          showToast(`Added "${title}".`);
+        }
+
+        savePortfolioData();
+        renderProjects();
+        closeProjectForm();
+      });
+
+      // Delegated Edit / Delete Project actions
+      document.getElementById("projects-list").addEventListener("click", (e) => {
+        const btn = e.target.closest("button[data-action]");
+        if (!btn) return;
+
+        const action = btn.getAttribute("data-action");
+        const id = btn.getAttribute("data-id");
+
+        if (action === "edit-project") {
+          const target = portfolioData.projects.find((p) => p.id === id);
+          if (target) openProjectForm(target);
+        } else if (action === "delete-project") {
+          portfolioData.projects = portfolioData.projects.filter((p) => p.id !== id);
+          savePortfolioData();
+          renderProjects();
+          showToast("Project removed.");
+        }
+      });
+
+      // Add verified skill
+      document.getElementById("skill-editor").addEventListener("submit", (e) => {
+        e.preventDefault();
+        const input = document.getElementById("new-skill-input");
+        const val = input.value.trim();
+        if (!val) return;
+        if (!portfolioData.skills.includes(val)) {
+          portfolioData.skills.push(val);
+          savePortfolioData();
+          renderSkills();
+          showToast(`Added "${val}".`);
+        }
+        input.value = "";
+      });
+
+      // Reset to default data
+      document.getElementById("btn-reset-default").addEventListener("click", () => {
+        localStorage.removeItem(STORAGE_KEY);
+        portfolioData = cloneData(DEFAULT_PORTFOLIO_DATA);
+        renderAbout();
+        renderProjects();
+        renderSkills();
+        closeProjectForm();
+        showToast("Reset to default portfolio data.");
+      });
+
+      // Export Data JSON modal
+      const jsonModal = document.getElementById("json-modal");
+      document.getElementById("btn-export-json").addEventListener("click", () => {
+        document.getElementById("json-export-output").value = JSON.stringify(portfolioData, null, 2);
+        document.getElementById("json-copy-status").textContent = "";
+        jsonModal.classList.remove("hidden");
+      });
+
+      document.getElementById("btn-close-json").addEventListener("click", () => {
+        jsonModal.classList.add("hidden");
+      });
+
+      document.getElementById("btn-copy-json").addEventListener("click", () => {
+        const jsonText = document.getElementById("json-export-output").value;
+        copyTextSafely(jsonText, () => {
+          document.getElementById("json-copy-status").textContent = "Copied JSON to clipboard.";
+        });
+      });
+
+      // Copy Email button
+      document.getElementById("btn-copy-email").addEventListener("click", () => {
+        copyTextSafely("abhishekkumar88462@gmail.com", () => {
+          const feedback = document.getElementById("copy-feedback");
+          feedback.textContent = "Copied abhishekkumar88462@gmail.com to clipboard.";
+          setTimeout(() => {
+            feedback.textContent = "";
+          }, 3000);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
