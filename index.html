@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abhishek Kumar — B.Tech CSE (AI &amp; ML) | NST ADYPU</title>
-  <meta name="description" content="Personal portfolio of Abhishek Kumar, 1st-Semester B.Tech CSE (AI & ML) student at Newton School of Technology (NST), ADYPU." />
+  <title>Abhishek Kumar — B.Tech CSE (AI &amp; ML) | Developer &amp; Builder</title>
+  <meta name="description" content="Portfolio of Abhishek Kumar — 1st-Semester B.Tech CSE (AI & ML) student at NST ADYPU. Creator of LifeOS, LLM Tokenizer, and Perplexity Explorer." />
 
-  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <!-- Google Fonts: Azeret Mono (Variable font matching heartbeat.ua) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
 
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -18,17 +18,15 @@
       theme: {
         extend: {
           colors: {
-            paper: '#FAF9F6',
-            surface: '#FFFFFF',
-            ink: '#111827',
-            muted: '#4B5563',
-            accent: '#1E3A8A',
-            accentHover: '#172554',
-            hairline: '#E5E7EB'
+            paper: '#f6f6f6',
+            ink: '#000000',
+            body: '#2d2d2d',
+            muted: '#737373',
+            borderLine: '#383838',
+            subtleLine: '#d4d4d4'
           },
           fontFamily: {
-            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-            mono: ['JetBrains Mono', 'ui-monospace', 'SFMono-Regular', 'monospace']
+            mono: ['"Azeret Mono"', 'monospace', 'ui-monospace']
           }
         }
       }
@@ -36,728 +34,591 @@
   </script>
 
   <style>
-    /* Editorial typography & strong keyboard accessibility focus indicators */
-    body {
-      background-color: #FAF9F6;
-      color: #111827;
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden;
+    /* Heartbeat.ua Design System Tokens & Signature Kinetic Typography */
+    :root {
+      --bg: #f6f6f6;
+      --text-main: #000000;
+      --text-body: #2d2d2d;
+      --border: #383838;
+      --border-light: #d4d4d4;
     }
 
-    /* High-visibility focus ring for Tab / Enter keyboard navigation */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg);
+      background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+      background-size: 36px 36px;
+      color: var(--text-main);
+      font-family: 'Azeret Mono', monospace;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Slanted Monumental Display Typography */
+    .heading-display {
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: -0.04em;
+      line-height: 0.9;
+    }
+
+    /* Variable Font Weight Transition (Heartbeat signature morph) */
+    .weight-morph {
+      transition: font-weight 0.4s cubic-bezier(0.09, 0.68, 0.33, 0.91),
+                  letter-spacing 0.4s cubic-bezier(0.09, 0.68, 0.33, 0.91),
+                  background-color 0.25s ease,
+                  color 0.25s ease;
+    }
+
+    .btn-heartbeat {
+      transition: all 0.4s cubic-bezier(0.09, 0.68, 0.33, 0.91);
+    }
+
+    .btn-heartbeat:hover {
+      font-weight: 900;
+      background-color: #000000;
+      color: #f6f6f6;
+    }
+
+    /* Geometric Pill Shapes & Collapsed Seam Hover */
+    .pill-shape {
+      transition: all 0.3s cubic-bezier(0.09, 0.68, 0.33, 0.91);
+    }
+    .pill-shape:hover {
+      border-radius: 0px !important;
+      background-color: #000000;
+      color: #f6f6f6;
+    }
+
+    /* 1px Negative Margin Collapsed Border Seams */
+    .border-collapse-seam {
+      margin-left: -1px;
+      margin-top: -1px;
+    }
+
+    /* High-visibility accessibility focus indicator */
     a:focus-visible,
-    button:focus-visible,
-    input:focus-visible,
-    textarea:focus-visible,
-    select:focus-visible {
-      outline: 2px solid #1E3A8A;
+    button:focus-visible {
+      outline: 2px solid #000000;
       outline-offset: 3px;
+    }
+
+    /* Running monochrome ticker */
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: 200%;
+      animation: marquee 28s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
     }
   </style>
 </head>
-<body class="min-h-screen flex flex-col selection:bg-blue-100 selection:text-ink">
+<body class="min-h-screen selection:bg-black selection:text-white">
 
-  <!-- Skip to Main Content for Keyboard & Screen Reader Accessibility -->
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:bg-accent focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:text-sm focus:font-medium">
-    Skip to main content
-  </a>
-
-  <!-- Unobtrusive Edit Mode Active Banner -->
-  <div id="edit-mode-banner" class="hidden bg-accent text-white border-b border-blue-950" role="region" aria-label="Edit Mode Controls">
-    <div class="max-w-3xl mx-auto px-5 sm:px-8 py-3 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-      <div class="text-xs sm:text-sm">
-        <span class="font-mono uppercase tracking-wider font-medium bg-white/15 px-2 py-0.5 rounded mr-2">Edit Mode Active</span>
-        <span class="text-blue-100">Changes save to this browser's <code class="font-mono text-white">localStorage</code> only.</span>
-      </div>
-      <div class="flex flex-wrap items-center gap-2">
-        <button type="button" id="btn-export-json" class="px-3 py-1.5 text-xs font-medium bg-white/10 hover:bg-white/20 text-white rounded border border-white/25 transition-colors">
-          Export Data JSON
-        </button>
-        <button type="button" id="btn-reset-default" class="px-3 py-1.5 text-xs font-medium bg-white/10 hover:bg-red-600/80 text-white rounded border border-white/25 transition-colors">
-          Reset to Default
-        </button>
-        <button type="button" id="btn-exit-edit" class="px-3 py-1.5 text-xs font-medium bg-white text-accent hover:bg-blue-50 rounded transition-colors">
-          Done Editing
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Sticky Top Navigation -->
-  <header class="sticky top-0 z-40 bg-paper/95 backdrop-blur-sm border-b border-hairline">
-    <nav class="max-w-3xl mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-4" aria-label="Primary Navigation">
-      <a href="#top" class="font-semibold text-ink tracking-tight text-base hover:text-accent transition-colors shrink-0">
-        Abhishek Kumar
+  <!-- TOP MINIMALIST FLOATING BAR -->
+  <header class="sticky top-0 z-50 bg-[#f6f6f6]/95 backdrop-blur-xs border-b border-borderLine">
+    <div class="max-w-[1920px] mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
+      <!-- Top Left Monogram Mark -->
+      <a href="#top" class="group flex items-center gap-2.5 text-black hover:opacity-80 transition-opacity">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-borderLine font-black text-sm italic tracking-tighter">
+          ak
+        </span>
+        <div class="flex flex-col">
+          <span class="text-xs font-bold uppercase tracking-tight leading-none">Abhishek Kumar</span>
+          <span class="text-[10px] text-muted font-light tracking-wide mt-0.5">B.Tech CSE &middot; NST ADYPU</span>
+        </div>
       </a>
-      <ul class="flex items-center gap-4 sm:gap-7 text-sm font-medium text-muted">
-        <li><a href="#about" class="hover:text-ink transition-colors py-1">About</a></li>
-        <li><a href="#projects" class="hover:text-ink transition-colors py-1">Projects</a></li>
-        <li><a href="#skills" class="hover:text-ink transition-colors py-1">Skills</a></li>
-        <li><a href="#contact" class="hover:text-ink transition-colors py-1">Contact</a></li>
-      </ul>
-    </nav>
+
+      <!-- Status Pill Indicator -->
+      <div class="hidden md:flex items-center gap-2 px-3 py-1 rounded-full border border-borderLine text-[11px] font-light">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span>OPEN FOR PROJECTS &amp; TECH COLLABS 2026</span>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="flex items-center gap-2 sm:gap-3">
+        <a href="#work" class="px-3 py-1 rounded-full border border-borderLine text-xs font-medium uppercase tracking-tight hover:bg-black hover:text-white transition-all">
+          Work
+        </a>
+        <a href="#competitions" class="hidden sm:inline-block px-3 py-1 rounded-full border border-borderLine text-xs font-medium uppercase tracking-tight hover:bg-black hover:text-white transition-all">
+          Challenges
+        </a>
+        <a href="#skills" class="px-3 py-1 rounded-full border border-borderLine text-xs font-medium uppercase tracking-tight hover:bg-black hover:text-white transition-all">
+          Skills
+        </a>
+        <a href="#contact" class="px-4 py-1 rounded-full bg-black text-white border border-black text-xs font-medium uppercase tracking-tight hover:bg-transparent hover:text-black transition-all">
+          Let's Talk
+        </a>
+      </nav>
+    </div>
   </header>
 
-  <!-- Main Content -->
-  <main id="main-content" class="flex-1">
-
-    <!-- 1. Hero Section: 10-Second Visitor Clarity -->
-    <section id="top" class="max-w-3xl mx-auto px-5 sm:px-8 pt-14 pb-16 sm:pt-20 sm:pb-24 border-b border-hairline">
-      <p class="font-mono text-xs sm:text-sm uppercase tracking-wider text-accent font-medium mb-4">
-        B.Tech CSE (AI &amp; ML) &middot; 1st Semester @ NST ADYPU
-      </p>
-      <h1 class="text-3xl sm:text-5xl font-bold tracking-tight text-ink leading-[1.15] mb-5">
-        Abhishek Kumar
-      </h1>
-      <p class="text-base sm:text-lg text-muted leading-relaxed max-w-2xl mb-8">
-        First-year computer science student building strong foundations in Python, C++, and practical software tools that solve everyday organizational problems.
-      </p>
-      <div class="flex flex-wrap items-center gap-3.5">
-        <a href="#projects" class="inline-flex items-center justify-center px-5 py-3 text-sm font-medium rounded-md bg-accent text-white hover:bg-accentHover transition-colors">
-          View Projects
-        </a>
-        <a href="#contact" class="inline-flex items-center justify-center px-5 py-3 text-sm font-medium rounded-md bg-surface text-ink border border-hairline hover:border-ink/40 transition-colors">
-          Contact Me
-        </a>
-      </div>
-    </section>
-
-    <!-- 2. About Section -->
-    <section id="about" class="max-w-3xl mx-auto px-5 sm:px-8 py-14 sm:py-20 border-b border-hairline">
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="font-mono text-xs uppercase tracking-widest text-muted font-medium">
-          01 / About
-        </h2>
-      </div>
-
-      <!-- Read-Only About View -->
-      <div id="about-display" class="space-y-4 text-base text-ink/90 leading-relaxed max-w-2xl"></div>
-
-      <!-- Edit Mode About Form -->
-      <div id="about-editor" class="hidden mt-4 bg-surface border border-hairline rounded-lg p-4 sm:p-5">
-        <label for="about-textarea" class="block font-mono text-xs uppercase tracking-wider text-muted mb-2">
-          Edit About Section (Separate paragraphs with a blank line)
-        </label>
-        <textarea id="about-textarea" rows="5" class="w-full rounded-md border border-hairline bg-paper px-3.5 py-2.5 text-sm text-ink leading-relaxed focus:border-accent"></textarea>
-        <div class="mt-3 flex items-center justify-between gap-3">
-          <span class="text-xs text-muted">Keep it truthful and grounded in your real experience.</span>
-          <button type="button" id="btn-save-about" class="px-4 py-2 text-xs font-medium rounded-md bg-accent text-white hover:bg-accentHover transition-colors">
-            Save About Text
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. Projects Section -->
-    <section id="projects" class="max-w-3xl mx-auto px-5 sm:px-8 py-14 sm:py-20 border-b border-hairline">
-      <div class="flex flex-wrap items-center justify-between gap-3 mb-8">
-        <h2 class="font-mono text-xs uppercase tracking-widest text-muted font-medium">
-          02 / Projects
-        </h2>
-        <button type="button" id="btn-open-add-project" class="hidden px-3.5 py-1.5 text-xs font-medium rounded-md bg-accent text-white hover:bg-accentHover transition-colors">
-          + Add Real Project
-        </button>
-      </div>
-
-      <!-- Add / Edit Project Form (Hidden unless triggered in Edit Mode) -->
-      <form id="project-form-container" class="hidden mb-10 bg-surface border border-hairline rounded-lg p-5 sm:p-6 space-y-4" novalidate>
-        <div class="flex items-center justify-between border-b border-hairline pb-3">
-          <h3 id="project-form-heading" class="text-sm font-semibold text-ink">Add New Project</h3>
-          <button type="button" id="btn-cancel-project" class="text-xs text-muted hover:text-ink underline">
-            Cancel
-          </button>
-        </div>
-
-        <input type="hidden" id="project-edit-id" value="" />
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div>
-            <label for="project-title" class="block text-xs font-medium text-ink mb-1">Project Title *</label>
-            <input type="text" id="project-title" required placeholder="e.g., Library Book Organizer" class="w-full rounded-md border border-hairline bg-paper px-3 py-2 text-sm text-ink" />
-          </div>
-          <div>
-            <label for="project-status" class="block text-xs font-medium text-ink mb-1">Status Badge *</label>
-            <select id="project-status" class="w-full rounded-md border border-hairline bg-paper px-3 py-2 text-sm text-ink">
-              <option value="Built at Hacktoberfest">Built at Hacktoberfest</option>
-              <option value="In Progress">In Progress</option>
-              <option value="Completed">Completed</option>
-            </select>
-          </div>
-        </div>
-
-        <div>
-          <label for="project-problem" class="block text-xs font-medium text-ink mb-1">Problem / Context *</label>
-          <textarea id="project-problem" rows="2" required placeholder="What real problem or class task did this address?" class="w-full rounded-md border border-hairline bg-paper px-3 py-2 text-sm text-ink"></textarea>
-        </div>
-
-        <div>
-          <label for="project-contribution" class="block text-xs font-medium text-ink mb-1">What I Built *</label>
-          <textarea id="project-contribution" rows="2" required placeholder="Describe what you specifically built or contributed." class="w-full rounded-md border border-hairline bg-paper px-3 py-2 text-sm text-ink"></textarea>
-        </div>
-
-        <div>
-          <label for="project-url" class="block text-xs font-medium text-ink mb-1">
-            Real Project URL <span class="text-muted font-normal">(Optional — leave blank if none; no dead # links will be created)</span>
-          </label>
-          <input type="url" id="project-url" placeholder="https://github.com/username/repository" class="w-full rounded-md border border-hairline bg-paper px-3 py-2 text-sm text-ink font-mono" />
-          <p id="project-form-error" class="hidden mt-1.5 text-xs text-red-700 font-medium"></p>
-        </div>
-
-        <div class="pt-1 flex items-center justify-end gap-2.5">
-          <button type="submit" class="px-4 py-2 text-xs font-medium rounded-md bg-accent text-white hover:bg-accentHover transition-colors">
-            Save Project
-          </button>
-        </div>
-      </form>
-
-      <!-- Projects List Container -->
-      <div id="projects-list" class="space-y-8"></div>
-    </section>
-
-    <!-- 4. Skills Section -->
-    <section id="skills" class="max-w-3xl mx-auto px-5 sm:px-8 py-14 sm:py-20 border-b border-hairline">
-      <div class="flex items-center justify-between mb-6">
-        <h2 class="font-mono text-xs uppercase tracking-widest text-muted font-medium">
-          03 / Skills &amp; Practice
-        </h2>
-      </div>
-
-      <p class="text-sm text-muted mb-5">
-        Core languages and technical activities I actively work with:
-      </p>
-
-      <!-- Verified Skills List -->
-      <ul id="skills-list" class="flex flex-wrap gap-2.5"></ul>
-
-      <!-- Edit Mode Skill Adder -->
-      <form id="skill-editor" class="hidden mt-5 pt-4 border-t border-hairline flex flex-col sm:flex-row gap-2.5 max-w-md">
-        <label for="new-skill-input" class="sr-only">Add verified skill</label>
-        <input type="text" id="new-skill-input" placeholder="Add a verified skill (e.g., Git)" class="flex-1 rounded-md border border-hairline bg-surface px-3 py-2 text-sm text-ink" />
-        <button type="submit" class="px-4 py-2 text-xs font-medium rounded-md bg-accent text-white hover:bg-accentHover transition-colors">
-          Add Skill
-        </button>
-      </form>
-    </section>
-
-    <!-- 5. Contact Section (Privacy-Safe: Email Only) -->
-    <section id="contact" class="max-w-3xl mx-auto px-5 sm:px-8 py-14 sm:py-20">
-      <h2 class="font-mono text-xs uppercase tracking-widest text-muted font-medium mb-6">
-        04 / Contact
-      </h2>
-
-      <div class="bg-surface border border-hairline rounded-lg p-6 sm:p-8">
-        <h3 class="text-xl sm:text-2xl font-semibold text-ink tracking-tight mb-2">
-          Get in touch
-        </h3>
-        <p class="text-sm sm:text-base text-muted leading-relaxed max-w-xl mb-6">
-          Open to project collaborations, mentor feedback, and entry-level technical discussions. The most reliable way to reach me is via email.
+  <!-- HERO SECTION: MONUMENTAL SLANTED VARIABLE TYPOGRAPHY -->
+  <section id="top" class="border-b border-borderLine pt-12 pb-16 sm:pt-20 sm:pb-24 px-4 sm:px-8 max-w-[1920px] mx-auto">
+    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-12">
+      <!-- Left Monumental Title -->
+      <div class="max-w-5xl">
+        <p class="text-xs sm:text-sm uppercase tracking-widest text-muted font-light mb-4">
+          [ 00 / PORTFOLIO &middot; B.TECH CSE AI &amp; ML &middot; 2026 ]
         </p>
+        <h1 class="heading-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.75rem] text-black">
+          BUILDING INTELLIGENT SOFTWARE &amp; REAL-WORLD SYSTEMS
+        </h1>
+      </div>
 
-        <div class="flex flex-col sm:flex-row sm:items-center gap-3">
-          <a href="mailto:abhishekkumar88462@gmail.com" class="inline-flex items-center justify-center px-5 py-3 text-sm font-medium rounded-md bg-accent text-white hover:bg-accentHover transition-colors break-all">
-            abhishekkumar88462@gmail.com
-          </a>
-
-          <button type="button" id="btn-copy-email" class="inline-flex items-center justify-center px-4 py-3 text-sm font-medium rounded-md bg-paper text-ink border border-hairline hover:border-ink/40 transition-colors">
-            Copy Email
-          </button>
+      <!-- Right Index Box with Collapsed Border Seams -->
+      <div class="lg:w-[380px] shrink-0 border border-borderLine p-5 sm:p-6 bg-white/40">
+        <div class="flex items-center justify-between border-b border-borderLine pb-3 mb-4">
+          <span class="text-xs font-bold uppercase tracking-wider">CREATOR &middot; DEVELOPER</span>
+          <span class="text-[11px] font-mono text-muted">ADYPU / PUNE</span>
         </div>
-
-        <p id="copy-feedback" role="status" aria-live="polite" class="mt-3 text-xs font-mono text-accent h-4"></p>
+        <p class="text-xs sm:text-sm font-light leading-relaxed text-body mb-5">
+          First-semester student at Newton School of Technology (ADYPU) engineering applications across Python, JavaScript, HTML, and C++. Building purposeful web tools, AI prototypes, and open-source software.
+        </p>
+        <div class="pt-3 border-t border-borderLine/50 flex flex-wrap gap-2 text-[11px] font-mono">
+          <span class="px-2 py-0.5 rounded border border-borderLine">NST ADYPU</span>
+          <span class="px-2 py-0.5 rounded border border-borderLine">HACKTOBERFEST</span>
+          <span class="px-2 py-0.5 rounded border border-borderLine">GSAP 2026</span>
+        </div>
       </div>
-    </section>
-  </main>
+    </div>
 
-  <!-- Toast Notification (Replaces alert/confirm) -->
-  <div id="status-toast" role="status" aria-live="polite" class="fixed bottom-5 right-5 z-50 hidden max-w-xs bg-ink text-white text-xs font-medium px-4 py-3 rounded-md shadow-lg border border-white/10"></div>
+    <!-- GEOMETRICALLY DISTINCT INDUSTRY PILLS (Heartbeat Signature Pattern) -->
+    <div class="flex flex-wrap items-center gap-0 border-t border-borderLine pt-8">
+      <div class="pill-shape px-6 py-3 border border-borderLine rounded-full text-xs sm:text-sm font-bold uppercase tracking-tight cursor-default -mr-[1px] mb-[-1px]">
+        (AI &amp; ML SYSTEMS)
+      </div>
+      <div class="pill-shape px-6 py-3 border border-borderLine rounded-md text-xs sm:text-sm font-bold uppercase tracking-tight cursor-default -mr-[1px] mb-[-1px]">
+        [PYTHON ARCHITECTURE]
+      </div>
+      <div class="pill-shape px-6 py-3 border border-borderLine text-xs sm:text-sm font-bold uppercase tracking-tight cursor-default -mr-[1px] mb-[-1px]">
+        {JAVASCRIPT / WEB TOOLS}
+      </div>
+      <div class="pill-shape px-6 py-3 border border-borderLine rounded-full text-xs sm:text-sm font-bold uppercase tracking-tight cursor-default -mr-[1px] mb-[-1px]">
+        &lt;OPEN SOURCE BUILDER&gt;
+      </div>
+    </div>
+  </section>
 
-  <!-- JSON Export Modal (For inspecting or copying updated portfolio data) -->
-  <div id="json-modal" class="fixed inset-0 z-50 hidden bg-ink/50 backdrop-blur-xs flex items-center justify-center p-4" role="dialog" aria-modal="true" aria-labelledby="json-modal-title">
-    <div class="bg-surface border border-hairline rounded-lg max-w-xl w-full p-5 sm:p-6 shadow-xl">
-      <div class="flex items-center justify-between border-b border-hairline pb-3 mb-3">
-        <h3 id="json-modal-title" class="text-sm font-semibold text-ink">Export Portfolio Data (JSON)</h3>
-        <button type="button" id="btn-close-json" class="text-xs text-muted hover:text-ink underline">Close</button>
-      </div>
-      <p class="text-xs text-muted mb-3 leading-relaxed">
-        Storage reality check: Edits made in Edit Mode are saved in <code class="font-mono text-ink">localStorage</code> for this browser only. Copy this JSON to update <code class="font-mono text-ink">DEFAULT_PORTFOLIO_DATA</code> in your source file when publishing updates for all visitors.
-      </p>
-      <textarea id="json-export-output" readonly rows="10" class="w-full rounded-md border border-hairline bg-paper p-3 font-mono text-xs text-ink"></textarea>
-      <div class="mt-3 flex items-center justify-between">
-        <span id="json-copy-status" class="text-xs font-mono text-accent"></span>
-        <button type="button" id="btn-copy-json" class="px-4 py-2 text-xs font-medium rounded-md bg-accent text-white hover:bg-accentHover transition-colors">
-          Copy JSON
-        </button>
-      </div>
+  <!-- MONOCHROME MARQUEE TICKER -->
+  <div class="border-b border-borderLine py-3 bg-black text-white overflow-hidden text-xs font-mono uppercase tracking-widest">
+    <div class="animate-marquee whitespace-nowrap flex gap-8 items-center">
+      <span>LIFEOS LIVE AT VERCELL &middot; HACKTOBERFEST 2026</span>
+      <span>&bull;</span>
+      <span>LLM TOKENIZER WEB APP &middot; REAL-TIME ENCODING VISUALIZER</span>
+      <span>&bull;</span>
+      <span>PERPLEXITY EXPLORER &middot; CONVERSATIONAL DISCOVERY</span>
+      <span>&bull;</span>
+      <span>CASE CONSILIUM 2026 &middot; BITS GOA CONSULTING CLUB</span>
+      <span>&bull;</span>
+      <span>FUND MY CRAZY &middot; GOOGLE STUDENT AMBASSADOR PROGRAM</span>
+      <span>&bull;</span>
+      <span>KLYTH MONEY CHAMPION 2026 &middot; STRATEGY &amp; WEALTH CHALLENGE</span>
+      <span>&bull;</span>
+      <span>PYTHON MASTERY &middot; CODEWITHHARRY VERIFIED CURRICULUM</span>
+      <span>&bull;</span>
+      <!-- Duplicate for infinite seamless scroll -->
+      <span>LIFEOS LIVE AT VERCEL &middot; HACKTOBERFEST 2026</span>
+      <span>&bull;</span>
+      <span>LLM TOKENIZER WEB APP &middot; REAL-TIME ENCODING VISUALIZER</span>
+      <span>&bull;</span>
+      <span>PERPLEXITY EXPLORER &middot; CONVERSATIONAL DISCOVERY</span>
+      <span>&bull;</span>
+      <span>CASE CONSILIUM 2026 &middot; BITS GOA CONSULTING CLUB</span>
+      <span>&bull;</span>
+      <span>FUND MY CRAZY &middot; GOOGLE STUDENT AMBASSADOR PROGRAM</span>
+      <span>&bull;</span>
+      <span>KLYTH MONEY CHAMPION 2026 &middot; STRATEGY &amp; WEALTH CHALLENGE</span>
+      <span>&bull;</span>
+      <span>PYTHON MASTERY &middot; CODEWITHHARRY VERIFIED CURRICULUM</span>
+      <span>&bull;</span>
     </div>
   </div>
 
-  <!-- Footer with Discreet Edit Mode Toggle -->
-  <footer class="border-t border-hairline bg-paper">
-    <div class="max-w-3xl mx-auto px-5 sm:px-8 py-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-xs text-muted">
-      <div>
-        <p class="text-ink font-medium">Abhishek Kumar</p>
-        <p class="mt-0.5">B.Tech CSE (AI &amp; ML), 1st Semester &middot; NST ADYPU</p>
-      </div>
+  <!-- MAIN EDITORIAL CONTENT -->
+  <main class="max-w-[1920px] mx-auto px-4 sm:px-8">
 
-      <div class="flex flex-col sm:items-end gap-1.5">
-        <button type="button" id="btn-toggle-edit" class="font-mono text-xs text-muted hover:text-accent underline underline-offset-4 transition-colors self-start sm:self-end">
-          Edit Mode: Off
-        </button>
-        <p class="text-[11px] text-muted/80">
-          Browser edits persist locally via <code class="font-mono">localStorage</code>.
+    <!-- 01 / FEATURED SOFTWARE & WEB APPS -->
+    <section id="work" class="py-16 sm:py-24 border-b border-borderLine">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-muted font-light">[ 01 / SELECTED WORK ]</span>
+          <h2 class="heading-display font-black text-3xl sm:text-5xl lg:text-6xl text-black mt-2">
+            FEATURED APPLICATIONS
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-muted font-light max-w-md">
+          Web tools and digital systems built with live interactive endpoints and clean architectures.
         </p>
       </div>
+
+      <!-- Bento Grid of Projects with Collapsed 1px Borders -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 border-t border-l border-borderLine">
+
+        <!-- 1. LifeOS -->
+        <article class="lg:col-span-12 border-r border-b border-borderLine p-6 sm:p-10 bg-white/60 hover:bg-white transition-colors flex flex-col justify-between">
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+              <span class="px-3 py-1 rounded-full border border-borderLine text-xs font-bold uppercase tracking-wider bg-black text-white">
+                Hacktoberfest 2026
+              </span>
+              <span class="text-xs font-mono text-muted">FEATURED WORK 01</span>
+            </div>
+
+            <h3 class="heading-display font-black text-2xl sm:text-4xl text-black mb-4">
+              LIFEOS &mdash; PERSONAL WORKFLOW OS
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-6">
+              <div class="border-l-2 border-black pl-4">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-muted mb-1">THE PROBLEM</h4>
+                <p class="text-xs sm:text-sm font-light text-body leading-relaxed">
+                  Keeping track of daily workflows, routines, study sessions, and productivity goals in a distraction-free, structured command center.
+                </p>
+              </div>
+              <div class="border-l-2 border-borderLine pl-4">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-muted mb-1">WHAT I BUILT</h4>
+                <p class="text-xs sm:text-sm font-light text-body leading-relaxed">
+                  Built and launched LifeOS during Hacktoberfest 2026 (by Xoders) to help individuals organize routines, track daily progress, and systematically streamline habits.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6 border-t border-borderLine/40 flex flex-wrap items-center justify-between gap-4">
+            <span class="text-xs font-mono text-muted">STACK: HTML &middot; JAVASCRIPT &middot; PRODUCTIVITY WORKFLOW</span>
+            <a href="https://lifeos-by-xoders.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-heartbeat inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-borderLine text-xs font-bold uppercase tracking-tight text-black">
+              <span>LAUNCH LIFEOS</span>
+              <span class="text-base leading-none">&nearr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 2. LLM Tokenizer -->
+        <article class="lg:col-span-6 border-r border-b border-borderLine p-6 sm:p-10 bg-white/40 hover:bg-white transition-colors flex flex-col justify-between">
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+              <span class="px-3 py-1 rounded-full border border-borderLine text-xs font-bold uppercase tracking-wider">
+                Interactive Web Tool
+              </span>
+              <span class="text-xs font-mono text-muted">PROJECT 02</span>
+            </div>
+
+            <h3 class="heading-display font-black text-2xl sm:text-3xl text-black mb-4">
+              LLM TOKENIZER
+            </h3>
+
+            <div class="space-y-4 my-6">
+              <div class="border-l-2 border-black pl-4">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-muted mb-1">THE PROBLEM</h4>
+                <p class="text-xs sm:text-sm font-light text-body leading-relaxed">
+                  Understanding how Large Language Models split raw natural text into subword tokens and numeric embeddings is opaque without hands-on visualization.
+                </p>
+              </div>
+              <div class="border-l-2 border-borderLine pl-4">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-muted mb-1">WHAT I BUILT</h4>
+                <p class="text-xs sm:text-sm font-light text-body leading-relaxed">
+                  Created an interactive web app that demonstrates subword token splitting, token counting, vocabulary lookup, and character mapping in real time.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6 border-t border-borderLine/40 flex flex-wrap items-center justify-between gap-4">
+            <span class="text-xs font-mono text-muted">STACK: JS &middot; TOKENIZATION &middot; AI</span>
+            <a href="https://llm-tokeniser-gold.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-heartbeat inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-borderLine text-xs font-bold uppercase tracking-tight text-black">
+              <span>OPEN TOKENIZER</span>
+              <span class="text-base leading-none">&nearr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 3. Perplexity Explorer -->
+        <article class="lg:col-span-6 border-r border-b border-borderLine p-6 sm:p-10 bg-white/40 hover:bg-white transition-colors flex flex-col justify-between">
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+              <span class="px-3 py-1 rounded-full border border-borderLine text-xs font-bold uppercase tracking-wider">
+                AI Discovery App
+              </span>
+              <span class="text-xs font-mono text-muted">PROJECT 03</span>
+            </div>
+
+            <h3 class="heading-display font-black text-2xl sm:text-3xl text-black mb-4">
+              PERPLEXITY EXPLORER
+            </h3>
+
+            <div class="space-y-4 my-6">
+              <div class="border-l-2 border-black pl-4">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-muted mb-1">THE PROBLEM</h4>
+                <p class="text-xs sm:text-sm font-light text-body leading-relaxed">
+                  Traditional web search presents cluttered link lists rather than structured, conversational query synthesis and exploration.
+                </p>
+              </div>
+              <div class="border-l-2 border-borderLine pl-4">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-muted mb-1">WHAT I BUILT</h4>
+                <p class="text-xs sm:text-sm font-light text-body leading-relaxed">
+                  Engineered a focused discovery and knowledge retrieval web application inspired by Perplexity AI for clean query synthesis.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6 border-t border-borderLine/40 flex flex-wrap items-center justify-between gap-4">
+            <span class="text-xs font-mono text-muted">STACK: JS &middot; CONVERSATIONAL UI</span>
+            <a href="https://perplexity-explorer-blond.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-heartbeat inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-borderLine text-xs font-bold uppercase tracking-tight text-black">
+              <span>LAUNCH EXPLORER</span>
+              <span class="text-base leading-none">&nearr;</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 02 / COMPETITIONS & HACKATHONS -->
+    <section id="competitions" class="py-16 sm:py-24 border-b border-borderLine">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-muted font-light">[ 02 / INITIATIVES &amp; CHALLENGES ]</span>
+          <h2 class="heading-display font-black text-3xl sm:text-5xl lg:text-6xl text-black mt-2">
+            COMPETITIONS &amp; PROGRAMS
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-muted font-light max-w-md">
+          Structured problem solving, university competitions, and ambassador programs.
+        </p>
+      </div>
+
+      <!-- 4-Column Collapsed Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border-t border-l border-borderLine">
+
+        <!-- Case Consilium 2026 -->
+        <div class="border-r border-b border-borderLine p-6 bg-white/40 hover:bg-white transition-colors flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-[10px] text-muted uppercase tracking-wider block mb-3">01 / CASE COMPETITION</span>
+            <h3 class="heading-display font-black text-xl text-black mb-3">
+              CASE CONSILIUM 2026
+            </h3>
+            <p class="text-xs font-bold text-muted mb-2">BITS Goa Consulting Club</p>
+            <p class="text-xs font-light text-body leading-relaxed mb-6">
+              Competed in structured business and strategic case problems under competitive constraints, formulating rigorous diagnostic solutions.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-borderLine/40">
+            <a href="https://app.truscholar.io/profile?credId=6b0561f984ff808d7a680718" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold underline hover:opacity-75">
+              <span>Verify on TruScholar</span>
+              <span>&nearr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Fund My Crazy -->
+        <div class="border-r border-b border-borderLine p-6 bg-white/40 hover:bg-white transition-colors flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-[10px] text-muted uppercase tracking-wider block mb-3">02 / GOOGLE PROGRAM</span>
+            <h3 class="heading-display font-black text-xl text-black mb-3">
+              FUND MY CRAZY 2026
+            </h3>
+            <p class="text-xs font-bold text-muted mb-2">Google Student Ambassador Program</p>
+            <p class="text-xs font-light text-body leading-relaxed mb-6">
+              Participated under GSAP 2026 pitching unconventional, high-impact technology concepts and collaborative student initiatives.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-borderLine/40">
+            <span class="text-xs font-mono text-muted">PITCH &middot; INNOVATION</span>
+          </div>
+        </div>
+
+        <!-- Klyth Money Champion -->
+        <div class="border-r border-b border-borderLine p-6 bg-white/40 hover:bg-white transition-colors flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-[10px] text-muted uppercase tracking-wider block mb-3">03 / FINANCE &amp; STRATEGY</span>
+            <h3 class="heading-display font-black text-xl text-black mb-3">
+              KLYTH MONEY CHAMPION 2026
+            </h3>
+            <p class="text-xs font-bold text-muted mb-2">Financial Literacy Competition</p>
+            <p class="text-xs font-light text-body leading-relaxed mb-6">
+              Demonstrated strategic financial decision making, budgeting models, and analytical problem-solving under real-time challenges.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-borderLine/40">
+            <span class="text-xs font-mono text-muted">STRATEGY &middot; FINANCE</span>
+          </div>
+        </div>
+
+        <!-- Python Curriculum (CodeWithHarry) -->
+        <div class="border-r border-b border-borderLine p-6 bg-white/40 hover:bg-white transition-colors flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-[10px] text-muted uppercase tracking-wider block mb-3">04 / CORE FOUNDATION</span>
+            <h3 class="heading-display font-black text-xl text-black mb-3">
+              PYTHON PROGRAMMING MASTERY
+            </h3>
+            <p class="text-xs font-bold text-muted mb-2">CodeWithHarry Comprehensive</p>
+            <p class="text-xs font-light text-body leading-relaxed mb-6">
+              Completed full curriculum covering core syntax, object-oriented programming (OOP), standard libraries, and algorithmic challenges.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-borderLine/40">
+            <span class="text-xs font-mono text-muted">PYTHON &middot; OOP &middot; LOGIC</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 03 / SKILLS & TECHNICAL STACK -->
+    <section id="skills" class="py-16 sm:py-24 border-b border-borderLine">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-muted font-light">[ 03 / CAPABILITIES ]</span>
+          <h2 class="heading-display font-black text-3xl sm:text-5xl lg:text-6xl text-black mt-2">
+            TECHNICAL REPERTOIRE
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-muted font-light max-w-md">
+          Core languages, libraries, and frameworks actively deployed in projects.
+        </p>
+      </div>
+
+      <!-- Selected Capabilities Grid (Heartbeat Collapsed Seams) -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-0 border-t border-l border-borderLine">
+
+        <div class="border-r border-b border-borderLine p-6 sm:p-8 hover:bg-black hover:text-white transition-colors group">
+          <span class="text-xs font-mono text-muted group-hover:text-neutral-400 block mb-2">CORE 01</span>
+          <h3 class="text-xl sm:text-2xl font-black uppercase italic tracking-tight">PYTHON</h3>
+          <p class="text-xs font-light text-muted group-hover:text-neutral-300 mt-2">OOP, Data Structures, Scripting</p>
+        </div>
+
+        <div class="border-r border-b border-borderLine p-6 sm:p-8 hover:bg-black hover:text-white transition-colors group">
+          <span class="text-xs font-mono text-muted group-hover:text-neutral-400 block mb-2">CORE 02</span>
+          <h3 class="text-xl sm:text-2xl font-black uppercase italic tracking-tight">JAVASCRIPT</h3>
+          <p class="text-xs font-light text-muted group-hover:text-neutral-300 mt-2">Interactive Web Apps, DOM, ES6+</p>
+        </div>
+
+        <div class="border-r border-b border-borderLine p-6 sm:p-8 hover:bg-black hover:text-white transition-colors group">
+          <span class="text-xs font-mono text-muted group-hover:text-neutral-400 block mb-2">CORE 03</span>
+          <h3 class="text-xl sm:text-2xl font-black uppercase italic tracking-tight">HTML &amp; CSS</h3>
+          <p class="text-xs font-light text-muted group-hover:text-neutral-300 mt-2">Semantic Web, Tailwind CSS, Responsive</p>
+        </div>
+
+        <div class="border-r border-b border-borderLine p-6 sm:p-8 hover:bg-black hover:text-white transition-colors group">
+          <span class="text-xs font-mono text-muted group-hover:text-neutral-400 block mb-2">CORE 04</span>
+          <h3 class="text-xl sm:text-2xl font-black uppercase italic tracking-tight">C++</h3>
+          <p class="text-xs font-light text-muted group-hover:text-neutral-300 mt-2">Algorithms, Memory, Fundamentals</p>
+        </div>
+
+        <div class="border-r border-b border-borderLine p-6 sm:p-8 hover:bg-black hover:text-white transition-colors group">
+          <span class="text-xs font-mono text-muted group-hover:text-neutral-400 block mb-2">DOMAIN 05</span>
+          <h3 class="text-xl sm:text-2xl font-black uppercase italic tracking-tight">LLM &amp; AI TOOLS</h3>
+          <p class="text-xs font-light text-muted group-hover:text-neutral-300 mt-2">Tokenization, Prompting, Integrations</p>
+        </div>
+
+        <div class="border-r border-b border-borderLine p-6 sm:p-8 hover:bg-black hover:text-white transition-colors group">
+          <span class="text-xs font-mono text-muted group-hover:text-neutral-400 block mb-2">DOMAIN 06</span>
+          <h3 class="text-xl sm:text-2xl font-black uppercase italic tracking-tight">OPEN SOURCE</h3>
+          <p class="text-xs font-light text-muted group-hover:text-neutral-300 mt-2">Hacktoberfest 2026, Git, Collaboration</p>
+        </div>
+
+        <div class="border-r border-b border-borderLine p-6 sm:p-8 hover:bg-black hover:text-white transition-colors group">
+          <span class="text-xs font-mono text-muted group-hover:text-neutral-400 block mb-2">DOMAIN 07</span>
+          <h3 class="text-xl sm:text-2xl font-black uppercase italic tracking-tight">WEB APPS</h3>
+          <p class="text-xs font-light text-muted group-hover:text-neutral-300 mt-2">Vercel Deployment, Cloud Hosting</p>
+        </div>
+
+        <div class="border-r border-b border-borderLine p-6 sm:p-8 hover:bg-black hover:text-white transition-colors group">
+          <span class="text-xs font-mono text-muted group-hover:text-neutral-400 block mb-2">DOMAIN 08</span>
+          <h3 class="text-xl sm:text-2xl font-black uppercase italic tracking-tight">PROBLEM SOLVING</h3>
+          <p class="text-xs font-light text-muted group-hover:text-neutral-300 mt-2">Case Consulting, Financial Strategy</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 04 / MONUMENTAL "LET'S TALK" CTA SECTION -->
+    <section id="contact" class="py-20 sm:py-32 border-b border-borderLine">
+      <div class="border border-borderLine p-8 sm:p-14 bg-white/50">
+        <span class="text-xs uppercase tracking-widest text-muted font-light block mb-4">
+          [ 04 / GET IN TOUCH ]
+        </span>
+
+        <!-- Giant Morphing Call-To-Action Link -->
+        <a href="mailto:abhishekkumar88462@gmail.com" class="group block my-6">
+          <span class="heading-display weight-morph font-thin group-hover:font-black text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] xl:text-[9rem] text-black tracking-tight block transition-all">
+            LET'S TALK &nearr;
+          </span>
+        </a>
+
+        <p class="text-sm sm:text-base font-light text-body max-w-2xl leading-relaxed mb-8">
+          Open to software project collaborations, early-stage builder teams, and hackathon partnerships. Reach out directly via email:
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="mailto:abhishekkumar88462@gmail.com" class="px-6 py-3 rounded-full bg-black text-white text-xs sm:text-sm font-bold uppercase tracking-tight hover:bg-neutral-800 transition-colors">
+            abhishekkumar88462@gmail.com
+          </a>
+          <button type="button" id="btn-copy-email" class="px-5 py-3 rounded-full border border-borderLine text-xs sm:text-sm font-medium uppercase tracking-tight hover:bg-black hover:text-white transition-colors">
+            Copy Email
+          </button>
+          <span id="copy-status" class="text-xs font-mono text-black"></span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- EDITORIAL FOOTER -->
+  <footer class="max-w-[1920px] mx-auto px-4 sm:px-8 py-12 text-xs font-mono text-muted flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+    <div class="flex items-center gap-3">
+      <span class="inline-flex items-center justify-center w-6 h-6 rounded-full border border-borderLine text-black text-xs font-black italic">
+        ak
+      </span>
+      <span>Abhishek Kumar &middot; B.Tech CSE (AI &amp; ML) &middot; NST ADYPU</span>
+    </div>
+
+    <div class="flex items-center gap-6">
+      <a href="https://lifeos-by-xoders.vercel.app" target="_blank" rel="noopener noreferrer" class="hover:text-black transition-colors">LifeOS</a>
+      <a href="https://llm-tokeniser-gold.vercel.app" target="_blank" rel="noopener noreferrer" class="hover:text-black transition-colors">LLM Tokenizer</a>
+      <a href="https://perplexity-explorer-blond.vercel.app" target="_blank" rel="noopener noreferrer" class="hover:text-black transition-colors">Perplexity</a>
+      <a href="#top" class="hover:text-black transition-colors font-bold">&uarr; TOP</a>
     </div>
   </footer>
 
-  <!-- Structured Portfolio Data & Application Logic -->
   <script>
-    /**
-     * =========================================================================
-     * DEFAULT PORTFOLIO DATA STORE
-     * Single source of truth for Abhishek Kumar's verified credentials.
-     * No private phone numbers, placeholder links (#), or fabricated metrics.
-     * =========================================================================
-     */
-    const DEFAULT_PORTFOLIO_DATA = {
-      about: [
-        "I am a first-semester B.Tech Computer Science and Engineering (AI & ML) student at Newton School of Technology (NST), ADYPU, focused on building strong programming fundamentals in Python and C++. Outside of coursework and coding, I enjoy reading books."
-      ],
-      projects: [
-        {
-          id: "life-tracker-hacktoberfest",
-          title: "Life Tracker",
-          status: "Built at Hacktoberfest",
-          problem: "Keeping track of daily routines, study sessions, and personal habits consistently in a single distraction-free place.",
-          contribution: "Built a structured tracker during Hacktoberfest to log daily habits, organize tasks, and review progress across routines.",
-          url: ""
-        }
-      ],
-      skills: [
-        "Python",
-        "C++",
-        "Open Source / Hacktoberfest Participation"
-      ]
-    };
-
-    const STORAGE_KEY = "abhishek_portfolio_v1";
-    let isEditMode = false;
-    let portfolioData = loadPortfolioData();
-
-    /**
-     * Load portfolio data from localStorage with safe fallback to defaults.
-     */
-    function loadPortfolioData() {
-      try {
-        const raw = localStorage.getItem(STORAGE_KEY);
-        if (!raw) return cloneData(DEFAULT_PORTFOLIO_DATA);
-        const parsed = JSON.parse(raw);
-        if (!Array.isArray(parsed.about) || !Array.isArray(parsed.projects) || !Array.isArray(parsed.skills)) {
-          return cloneData(DEFAULT_PORTFOLIO_DATA);
-        }
-        return parsed;
-      } catch (err) {
-        return cloneData(DEFAULT_PORTFOLIO_DATA);
-      }
-    }
-
-    function savePortfolioData() {
-      try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(portfolioData));
-      } catch (err) {
-        showToast("Unable to save to localStorage in this browser context.");
-      }
-    }
-
-    function cloneData(obj) {
-      return JSON.parse(JSON.stringify(obj));
-    }
-
-    /**
-     * Safe text escaping helper for dynamic rendering.
-     */
-    function escapeHTML(str) {
-      const div = document.createElement("div");
-      div.textContent = str;
-      return div.innerHTML;
-    }
-
-    /**
-     * Non-blocking toast message (replaces alert/confirm).
-     */
-    let toastTimer = null;
-    function showToast(message) {
-      const toast = document.getElementById("status-toast");
-      if (!toast) return;
-      toast.textContent = message;
-      toast.classList.remove("hidden");
-      clearTimeout(toastTimer);
-      toastTimer = setTimeout(() => {
-        toast.classList.add("hidden");
-      }, 3200);
-    }
-
-    /**
-     * Render About section paragraphs & sync Edit Mode textarea.
-     */
-    function renderAbout() {
-      const container = document.getElementById("about-display");
-      const textarea = document.getElementById("about-textarea");
-      container.innerHTML = "";
-
-      portfolioData.about.forEach((paragraph) => {
-        const p = document.createElement("p");
-        p.textContent = paragraph;
-        container.appendChild(p);
-      });
-
-      if (textarea) {
-        textarea.value = portfolioData.about.join("\n\n");
-      }
-    }
-
-    /**
-     * Render Projects list with honest link states (never dead '#' links).
-     */
-    function renderProjects() {
-      const list = document.getElementById("projects-list");
-      list.innerHTML = "";
-
-      if (portfolioData.projects.length === 0) {
-        list.innerHTML = `
-          <p class="text-sm text-muted border border-dashed border-hairline rounded-lg p-6">
-            No projects listed yet. Enable Edit Mode in the footer to add a real project.
-          </p>
-        `;
-        return;
-      }
-
-      portfolioData.projects.forEach((project) => {
-        const article = document.createElement("article");
-        article.className = "bg-surface border border-hairline rounded-lg p-5 sm:p-7 transition-colors";
-
-        const hasValidUrl = project.url && /^https?:\/\//i.test(project.url.trim());
-        const linkMarkup = hasValidUrl
-          ? `<a href="${escapeHTML(project.url.trim())}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs sm:text-sm font-medium text-accent hover:text-accentHover underline underline-offset-4">
-              View Source / Project &rarr;
-            </a>`
-          : `<span class="text-xs font-mono text-muted">Repository / demo link available on request</span>`;
-
-        const editControlsMarkup = isEditMode
-          ? `<div class="mt-4 pt-3 border-t border-hairline flex items-center gap-3">
-              <button type="button" data-action="edit-project" data-id="${escapeHTML(project.id)}" class="text-xs font-medium text-accent hover:underline">
-                Edit Project
-              </button>
-              <button type="button" data-action="delete-project" data-id="${escapeHTML(project.id)}" class="text-xs font-medium text-red-700 hover:underline">
-                Delete
-              </button>
-            </div>`
-          : "";
-
-        article.innerHTML = `
-          <div class="flex flex-wrap items-start justify-between gap-2 mb-3">
-            <h3 class="text-lg sm:text-xl font-semibold text-ink tracking-tight">
-              ${escapeHTML(project.title)}
-            </h3>
-            <span class="font-mono text-[11px] uppercase tracking-wider px-2.5 py-1 rounded bg-paper border border-hairline text-ink/80">
-              ${escapeHTML(project.status)}
-            </span>
-          </div>
-
-          <div class="space-y-2.5 text-sm sm:text-[15px] text-ink/90 leading-relaxed mb-4">
-            <p><span class="font-medium text-ink">Problem:</span> ${escapeHTML(project.problem)}</p>
-            <p><span class="font-medium text-ink">What I Built:</span> ${escapeHTML(project.contribution)}</p>
-          </div>
-
-          <div>${linkMarkup}</div>
-          ${editControlsMarkup}
-        `;
-
-        list.appendChild(article);
-      });
-    }
-
-    /**
-     * Render verified Skills list (with remove buttons in Edit Mode).
-     */
-    function renderSkills() {
-      const list = document.getElementById("skills-list");
-      list.innerHTML = "";
-
-      portfolioData.skills.forEach((skill, index) => {
-        const li = document.createElement("li");
-        li.className = "inline-flex items-center gap-2 px-3.5 py-2 rounded-md bg-surface border border-hairline text-sm font-medium text-ink";
-
-        const label = document.createElement("span");
-        label.textContent = skill;
-        li.appendChild(label);
-
-        if (isEditMode) {
-          const removeBtn = document.createElement("button");
-          removeBtn.type = "button";
-          removeBtn.setAttribute("aria-label", `Remove ${skill}`);
-          removeBtn.className = "text-xs text-muted hover:text-red-700 font-mono ml-1";
-          removeBtn.textContent = "×";
-          removeBtn.addEventListener("click", () => {
-            portfolioData.skills.splice(index, 1);
-            savePortfolioData();
-            renderSkills();
-            showToast(`Removed "${skill}".`);
-          });
-          li.appendChild(removeBtn);
-        }
-
-        list.appendChild(li);
-      });
-    }
-
-    /**
-     * Toggle Edit Mode UI visibility across sections.
-     */
-    function setEditMode(enabled) {
-      isEditMode = enabled;
-
-      document.getElementById("edit-mode-banner").classList.toggle("hidden", !enabled);
-      document.getElementById("about-editor").classList.toggle("hidden", !enabled);
-      document.getElementById("btn-open-add-project").classList.toggle("hidden", !enabled);
-      document.getElementById("skill-editor").classList.toggle("hidden", !enabled);
-
-      if (!enabled) {
-        closeProjectForm();
-      }
-
-      const toggleBtn = document.getElementById("btn-toggle-edit");
-      toggleBtn.textContent = enabled ? "Edit Mode: On" : "Edit Mode: Off";
-
-      renderProjects();
-      renderSkills();
-    }
-
-    /**
-     * Open Add / Edit Project Form populated with existing or blank fields.
-     */
-    function openProjectForm(project = null) {
-      const form = document.getElementById("project-form-container");
-      const heading = document.getElementById("project-form-heading");
-      const errorEl = document.getElementById("project-form-error");
-
-      errorEl.classList.add("hidden");
-      errorEl.textContent = "";
-
-      if (project) {
-        heading.textContent = "Edit Project";
-        document.getElementById("project-edit-id").value = project.id;
-        document.getElementById("project-title").value = project.title;
-        document.getElementById("project-status").value = project.status;
-        document.getElementById("project-problem").value = project.problem;
-        document.getElementById("project-contribution").value = project.contribution;
-        document.getElementById("project-url").value = project.url || "";
+    // Copy email helper
+    document.getElementById('btn-copy-email').addEventListener('click', function() {
+      const email = 'abhishekkumar88462@gmail.com';
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(showCopied);
       } else {
-        heading.textContent = "Add New Real Project";
-        document.getElementById("project-edit-id").value = "";
-        document.getElementById("project-title").value = "";
-        document.getElementById("project-status").value = "In Progress";
-        document.getElementById("project-problem").value = "";
-        document.getElementById("project-contribution").value = "";
-        document.getElementById("project-url").value = "";
+        const textarea = document.createElement('textarea');
+        textarea.value = email;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        showCopied();
       }
-
-      form.classList.remove("hidden");
-      document.getElementById("project-title").focus();
-    }
-
-    function closeProjectForm() {
-      document.getElementById("project-form-container").classList.add("hidden");
-    }
-
-    /**
-     * Cross-browser clipboard copy helper (uses execCommand fallback for iFrames).
-     */
-    function copyTextSafely(text, onSuccess) {
-      const tempInput = document.createElement("textarea");
-      tempInput.value = text;
-      tempInput.setAttribute("readonly", "");
-      tempInput.style.position = "fixed";
-      tempInput.style.opacity = "0";
-      document.body.appendChild(tempInput);
-      tempInput.select();
-      try {
-        document.execCommand("copy");
-        onSuccess();
-      } catch (err) {
-        showToast("Copy failed—please copy manually.");
-      }
-      document.body.removeChild(tempInput);
-    }
-
-    /**
-     * Initialize all DOM event listeners on load.
-     */
-    document.addEventListener("DOMContentLoaded", () => {
-      renderAbout();
-      renderProjects();
-      renderSkills();
-
-      // Footer & Banner Edit Mode toggles
-      document.getElementById("btn-toggle-edit").addEventListener("click", () => {
-        setEditMode(!isEditMode);
-        showToast(isEditMode ? "Edit Mode enabled." : "Edit Mode closed.");
-      });
-
-      document.getElementById("btn-exit-edit").addEventListener("click", () => {
-        setEditMode(false);
-      });
-
-      // Save About section
-      document.getElementById("btn-save-about").addEventListener("click", () => {
-        const raw = document.getElementById("about-textarea").value.trim();
-        const paragraphs = raw
-          .split(/\n\s*\n/)
-          .map((p) => p.trim())
-          .filter(Boolean);
-
-        if (paragraphs.length === 0) {
-          showToast("About section cannot be empty.");
-          return;
-        }
-
-        portfolioData.about = paragraphs;
-        savePortfolioData();
-        renderAbout();
-        showToast("About section saved locally.");
-      });
-
-      // Open Add Project Form
-      document.getElementById("btn-open-add-project").addEventListener("click", () => {
-        openProjectForm(null);
-      });
-
-      document.getElementById("btn-cancel-project").addEventListener("click", closeProjectForm);
-
-      // Submit Add / Edit Project Form
-      document.getElementById("project-form-container").addEventListener("submit", (e) => {
-        e.preventDefault();
-        const errorEl = document.getElementById("project-form-error");
-        errorEl.classList.add("hidden");
-
-        const editId = document.getElementById("project-edit-id").value.trim();
-        const title = document.getElementById("project-title").value.trim();
-        const status = document.getElementById("project-status").value;
-        const problem = document.getElementById("project-problem").value.trim();
-        const contribution = document.getElementById("project-contribution").value.trim();
-        const url = document.getElementById("project-url").value.trim();
-
-        if (!title || !problem || !contribution) {
-          errorEl.textContent = "Please complete Title, Problem / Context, and What I Built.";
-          errorEl.classList.remove("hidden");
-          return;
-        }
-
-        if (url && !/^https?:\/\//i.test(url)) {
-          errorEl.textContent = "Project URL must start with http:// or https:// (or leave it blank).";
-          errorEl.classList.remove("hidden");
-          return;
-        }
-
-        if (editId) {
-          const idx = portfolioData.projects.findIndex((p) => p.id === editId);
-          if (idx !== -1) {
-            portfolioData.projects[idx] = { id: editId, title, status, problem, contribution, url };
-          }
-          showToast(`Updated "${title}".`);
-        } else {
-          portfolioData.projects.push({
-            id: "proj-" + Date.now(),
-            title,
-            status,
-            problem,
-            contribution,
-            url
-          });
-          showToast(`Added "${title}".`);
-        }
-
-        savePortfolioData();
-        renderProjects();
-        closeProjectForm();
-      });
-
-      // Delegated Edit / Delete Project actions
-      document.getElementById("projects-list").addEventListener("click", (e) => {
-        const btn = e.target.closest("button[data-action]");
-        if (!btn) return;
-
-        const action = btn.getAttribute("data-action");
-        const id = btn.getAttribute("data-id");
-
-        if (action === "edit-project") {
-          const target = portfolioData.projects.find((p) => p.id === id);
-          if (target) openProjectForm(target);
-        } else if (action === "delete-project") {
-          portfolioData.projects = portfolioData.projects.filter((p) => p.id !== id);
-          savePortfolioData();
-          renderProjects();
-          showToast("Project removed.");
-        }
-      });
-
-      // Add verified skill
-      document.getElementById("skill-editor").addEventListener("submit", (e) => {
-        e.preventDefault();
-        const input = document.getElementById("new-skill-input");
-        const val = input.value.trim();
-        if (!val) return;
-        if (!portfolioData.skills.includes(val)) {
-          portfolioData.skills.push(val);
-          savePortfolioData();
-          renderSkills();
-          showToast(`Added "${val}".`);
-        }
-        input.value = "";
-      });
-
-      // Reset to default data
-      document.getElementById("btn-reset-default").addEventListener("click", () => {
-        localStorage.removeItem(STORAGE_KEY);
-        portfolioData = cloneData(DEFAULT_PORTFOLIO_DATA);
-        renderAbout();
-        renderProjects();
-        renderSkills();
-        closeProjectForm();
-        showToast("Reset to default portfolio data.");
-      });
-
-      // Export Data JSON modal
-      const jsonModal = document.getElementById("json-modal");
-      document.getElementById("btn-export-json").addEventListener("click", () => {
-        document.getElementById("json-export-output").value = JSON.stringify(portfolioData, null, 2);
-        document.getElementById("json-copy-status").textContent = "";
-        jsonModal.classList.remove("hidden");
-      });
-
-      document.getElementById("btn-close-json").addEventListener("click", () => {
-        jsonModal.classList.add("hidden");
-      });
-
-      document.getElementById("btn-copy-json").addEventListener("click", () => {
-        const jsonText = document.getElementById("json-export-output").value;
-        copyTextSafely(jsonText, () => {
-          document.getElementById("json-copy-status").textContent = "Copied JSON to clipboard.";
-        });
-      });
-
-      // Copy Email button
-      document.getElementById("btn-copy-email").addEventListener("click", () => {
-        copyTextSafely("abhishekkumar88462@gmail.com", () => {
-          const feedback = document.getElementById("copy-feedback");
-          feedback.textContent = "Copied abhishekkumar88462@gmail.com to clipboard.";
-          setTimeout(() => {
-            feedback.textContent = "";
-          }, 3000);
-        });
-      });
     });
+
+    function showCopied() {
+      const el = document.getElementById('copy-status');
+      el.textContent = 'COPIED TO CLIPBOARD ✓';
+      setTimeout(() => {
+        el.textContent = '';
+      }, 3000);
+    }
   </script>
 </body>
 </html>
