@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abhishek Kumar — B.Tech CSE (AI &amp; ML) | Developer &amp; Builder</title>
+  <meta name="description" content="Portfolio of Abhishek Kumar — 1st-Semester B.Tech CSE (AI & ML) student at NST ADYPU. Creator of LifeOS, LLM Tokenizer, and Perplexity Explorer." />
+
+  <!-- Google Fonts: Azeret Mono (Variable font matching heartbeat.ua) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            paper: '#f6f6f6',
+            ink: '#000000',
+            body: '#2d2d2d',
+            muted: '#737373',
+            borderLine: '#383838',
+            subtleLine: '#d4d4d4'
+          },
+          fontFamily: {
+            mono: ['"Azeret Mono"', 'monospace', 'ui-monospace']
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* Heartbeat.ua Design System Tokens & Signature Kinetic Typography */
+    :root {
+      --bg: #f6f6f6;
+      --text-main: #000000;
+      --text-body: #2d2d2d;
+      --border: #383838;
+      --border-light: #d4d4d4;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg);
+      background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.06) 1px, transparent 1px);
+      background-size: 36px 36px;
+      color: var(--text-main);
+      font-family: 'Azeret Mono', monospace;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Slanted Monumental Display Typography */
+    .heading-display {
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: -0.04em;
+      line-height: 0.9;
+    }
+
+    /* Variable Font Weight Transition (Heartbeat signature morph) */
+    .weight-morph {
+      transition: font-weight 0.4s cubic-bezier(0.09, 0.68, 0.33, 0.91),
+                  letter-spacing 0.4s cubic-bezier(0.09, 0.68, 0.33, 0.91),
+                  background-color 0.25s ease,
+                  color 0.25s ease;
+    }
+
+    .btn-heartbeat {
+      transition: all 0.4s cubic-bezier(0.09, 0.68, 0.33, 0.91);
+    }
+
+    .btn-heartbeat:hover {
+      font-weight: 900;
+      background-color: #000000;
+      color: #f6f6f6;
+    }
+
+    /* Geometric Pill Shapes & Collapsed Seam Hover */
+    .pill-shape {
+      transition: all 0.3s cubic-bezier(0.09, 0.68, 0.33, 0.91);
+    }
+    .pill-shape:hover {
+      border-radius: 0px !important;
+      background-color: #000000;
+      color: #f6f6f6;
+    }
+
+    /* 1px Negative Margin Collapsed Border Seams */
+    .border-collapse-seam {
+      margin-left: -1px;
+      margin-top: -1px;
+    }
+
+    /* High-visibility accessibility focus indicator */
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid #000000;
+      outline-offset: 3px;
+    }
+
+    /* Running monochrome ticker */
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .animate-marquee {
+      display: flex;
+      width: 200%;
+      animation: marquee 28s linear infinite;
+    }
+    .animate-marquee:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body class="min-h-screen selection:bg-black selection:text-white">
+
+  <!-- TOP MINIMALIST FLOATING BAR -->
+  <header class="sticky top-0 z-50 bg-[#f6f6f6]/95 backdrop-blur-xs border-b border-borderLine">
+    <div class="max-w-[1920px] mx-auto px-4 sm:px-8 py-3.5 flex items-center justify-between">
+      <!-- Top Left Monogram Mark -->
+      <a href="#top" class="group flex items-center gap-2.5 text-black hover:opacity-80 transition-opacity">
+        <span class="inline-flex items-center justify-center w-8 h-8 rounded-full border border-borderLine font-black text-sm italic tracking-tighter">
+          ak
+        </span>
+        <div class="flex flex-col">
+          <span class="text-xs font-bold uppercase tracking-tight leading-none">Abhishek Kumar</span>
+          <span class="text-[10px] text-muted font-light tracking-wide mt-0.5">B.Tech CSE &middot; NST ADYPU</span>
+        </div>
+      </a>
+
+      <!-- Status Pill Indicator -->
+      <div class="hidden md:flex items-center gap-2 px-3 py-1 rounded-full border border-borderLine text-[11px] font-light">
+        <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+        <span>OPEN FOR PROJECTS &amp; TECH COLLABS 2026</span>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="flex items-center gap-2 sm:gap-3">
+        <a href="#work" class="px-3 py-1 rounded-full border border-borderLine text-xs font-medium uppercase tracking-tight hover:bg-black hover:text-white transition-all">
+          Work
+        </a>
+        <a href="#competitions" class="hidden sm:inline-block px-3 py-1 rounded-full border border-borderLine text-xs font-medium uppercase tracking-tight hover:bg-black hover:text-white transition-all">
+          Challenges
+        </a>
+        <a href="#skills" class="px-3 py-1 rounded-full border border-borderLine text-xs font-medium uppercase tracking-tight hover:bg-black hover:text-white transition-all">
+          Skills
+        </a>
+        <a href="#contact" class="px-4 py-1 rounded-full bg-black text-white border border-black text-xs font-medium uppercase tracking-tight hover:bg-transparent hover:text-black transition-all">
+          Let's Talk
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO SECTION: MONUMENTAL SLANTED VARIABLE TYPOGRAPHY -->
+  <section id="top" class="border-b border-borderLine pt-12 pb-16 sm:pt-20 sm:pb-24 px-4 sm:px-8 max-w-[1920px] mx-auto">
+    <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-12">
+      <!-- Left Monumental Title -->
+      <div class="max-w-5xl">
+        <p class="text-xs sm:text-sm uppercase tracking-widest text-muted font-light mb-4">
+          [ 00 / PORTFOLIO &middot; B.TECH CSE AI &amp; ML &middot; 2026 ]
+        </p>
+        <h1 class="heading-display font-black text-4xl sm:text-6xl md:text-7xl lg:text-[5.5rem] xl:text-[6.75rem] text-black">
+          BUILDING INTELLIGENT SOFTWARE &amp; REAL-WORLD SYSTEMS
+        </h1>
+      </div>
+
+      <!-- Right Index Box with Collapsed Border Seams -->
+      <div class="lg:w-[380px] shrink-0 border border-borderLine p-5 sm:p-6 bg-white/40">
+        <div class="flex items-center justify-between border-b border-borderLine pb-3 mb-4">
+          <span class="text-xs font-bold uppercase tracking-wider">CREATOR &middot; DEVELOPER</span>
+          <span class="text-[11px] font-mono text-muted">ADYPU / PUNE</span>
+        </div>
+        <p class="text-xs sm:text-sm font-light leading-relaxed text-body mb-5">
+          First-semester student at Newton School of Technology (ADYPU) engineering applications across Python, JavaScript, HTML, and C++. Building purposeful web tools, AI prototypes, and open-source software.
+        </p>
+        <div class="pt-3 border-t border-borderLine/50 flex flex-wrap gap-2 text-[11px] font-mono">
+          <span class="px-2 py-0.5 rounded border border-borderLine">NST ADYPU</span>
+          <span class="px-2 py-0.5 rounded border border-borderLine">HACKTOBERFEST</span>
+          <span class="px-2 py-0.5 rounded border border-borderLine">GSAP 2026</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- GEOMETRICALLY DISTINCT INDUSTRY PILLS (Heartbeat Signature Pattern) -->
+    <div class="flex flex-wrap items-center gap-0 border-t border-borderLine pt-8">
+      <div class="pill-shape px-6 py-3 border border-borderLine rounded-full text-xs sm:text-sm font-bold uppercase tracking-tight cursor-default -mr-[1px] mb-[-1px]">
+        (AI &amp; ML SYSTEMS)
+      </div>
+      <div class="pill-shape px-6 py-3 border border-borderLine rounded-md text-xs sm:text-sm font-bold uppercase tracking-tight cursor-default -mr-[1px] mb-[-1px]">
+        [PYTHON ARCHITECTURE]
+      </div>
+      <div class="pill-shape px-6 py-3 border border-borderLine text-xs sm:text-sm font-bold uppercase tracking-tight cursor-default -mr-[1px] mb-[-1px]">
+        {JAVASCRIPT / WEB TOOLS}
+      </div>
+      <div class="pill-shape px-6 py-3 border border-borderLine rounded-full text-xs sm:text-sm font-bold uppercase tracking-tight cursor-default -mr-[1px] mb-[-1px]">
+        &lt;OPEN SOURCE BUILDER&gt;
+      </div>
+    </div>
+  </section>
+
+  <!-- MONOCHROME MARQUEE TICKER -->
+  <div class="border-b border-borderLine py-3 bg-black text-white overflow-hidden text-xs font-mono uppercase tracking-widest">
+    <div class="animate-marquee whitespace-nowrap flex gap-8 items-center">
+      <span>LIFEOS LIVE AT VERCELL &middot; HACKTOBERFEST 2026</span>
+      <span>&bull;</span>
+      <span>LLM TOKENIZER WEB APP &middot; REAL-TIME ENCODING VISUALIZER</span>
+      <span>&bull;</span>
+      <span>PERPLEXITY EXPLORER &middot; CONVERSATIONAL DISCOVERY</span>
+      <span>&bull;</span>
+      <span>CASE CONSILIUM 2026 &middot; BITS GOA CONSULTING CLUB</span>
+      <span>&bull;</span>
+      <span>FUND MY CRAZY &middot; GOOGLE STUDENT AMBASSADOR PROGRAM</span>
+      <span>&bull;</span>
+      <span>KLYTH MONEY CHAMPION 2026 &middot; STRATEGY &amp; WEALTH CHALLENGE</span>
+      <span>&bull;</span>
+      <span>PYTHON MASTERY &middot; CODEWITHHARRY VERIFIED CURRICULUM</span>
+      <span>&bull;</span>
+      <!-- Duplicate for infinite seamless scroll -->
+      <span>LIFEOS LIVE AT VERCEL &middot; HACKTOBERFEST 2026</span>
+      <span>&bull;</span>
+      <span>LLM TOKENIZER WEB APP &middot; REAL-TIME ENCODING VISUALIZER</span>
+      <span>&bull;</span>
+      <span>PERPLEXITY EXPLORER &middot; CONVERSATIONAL DISCOVERY</span>
+      <span>&bull;</span>
+      <span>CASE CONSILIUM 2026 &middot; BITS GOA CONSULTING CLUB</span>
+      <span>&bull;</span>
+      <span>FUND MY CRAZY &middot; GOOGLE STUDENT AMBASSADOR PROGRAM</span>
+      <span>&bull;</span>
+      <span>KLYTH MONEY CHAMPION 2026 &middot; STRATEGY &amp; WEALTH CHALLENGE</span>
+      <span>&bull;</span>
+      <span>PYTHON MASTERY &middot; CODEWITHHARRY VERIFIED CURRICULUM</span>
+      <span>&bull;</span>
+    </div>
+  </div>
+
+  <!-- MAIN EDITORIAL CONTENT -->
+  <main class="max-w-[1920px] mx-auto px-4 sm:px-8">
+
+    <!-- 01 / FEATURED SOFTWARE & WEB APPS -->
+    <section id="work" class="py-16 sm:py-24 border-b border-borderLine">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-muted font-light">[ 01 / SELECTED WORK ]</span>
+          <h2 class="heading-display font-black text-3xl sm:text-5xl lg:text-6xl text-black mt-2">
+            FEATURED APPLICATIONS
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-muted font-light max-w-md">
+          Web tools and digital systems built with live interactive endpoints and clean architectures.
+        </p>
+      </div>
+
+      <!-- Bento Grid of Projects with Collapsed 1px Borders -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-0 border-t border-l border-borderLine">
+
+        <!-- 1. LifeOS -->
+        <article class="lg:col-span-12 border-r border-b border-borderLine p-6 sm:p-10 bg-white/60 hover:bg-white transition-colors flex flex-col justify-between">
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+              <span class="px-3 py-1 rounded-full border border-borderLine text-xs font-bold uppercase tracking-wider bg-black text-white">
+                Hacktoberfest 2026
+              </span>
+              <span class="text-xs font-mono text-muted">FEATURED WORK 01</span>
+            </div>
+
+            <h3 class="heading-display font-black text-2xl sm:text-4xl text-black mb-4">
+              LIFEOS &mdash; PERSONAL WORKFLOW OS
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 my-6">
+              <div class="border-l-2 border-black pl-4">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-muted mb-1">THE PROBLEM</h4>
+                <p class="text-xs sm:text-sm font-light text-body leading-relaxed">
+                  Keeping track of daily workflows, routines, study sessions, and productivity goals in a distraction-free, structured command center.
+                </p>
+              </div>
+              <div class="border-l-2 border-borderLine pl-4">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-muted mb-1">WHAT I BUILT</h4>
+                <p class="text-xs sm:text-sm font-light text-body leading-relaxed">
+                  Built and launched LifeOS during Hacktoberfest 2026 (by Xoders) to help individuals organize routines, track daily progress, and systematically streamline habits.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6 border-t border-borderLine/40 flex flex-wrap items-center justify-between gap-4">
+            <span class="text-xs font-mono text-muted">STACK: HTML &middot; JAVASCRIPT &middot; PRODUCTIVITY WORKFLOW</span>
+            <a href="https://lifeos-by-xoders.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-heartbeat inline-flex items-center gap-2 px-6 py-2.5 rounded-full border border-borderLine text-xs font-bold uppercase tracking-tight text-black">
+              <span>LAUNCH LIFEOS</span>
+              <span class="text-base leading-none">&nearr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 2. LLM Tokenizer -->
+        <article class="lg:col-span-6 border-r border-b border-borderLine p-6 sm:p-10 bg-white/40 hover:bg-white transition-colors flex flex-col justify-between">
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+              <span class="px-3 py-1 rounded-full border border-borderLine text-xs font-bold uppercase tracking-wider">
+                Interactive Web Tool
+              </span>
+              <span class="text-xs font-mono text-muted">PROJECT 02</span>
+            </div>
+
+            <h3 class="heading-display font-black text-2xl sm:text-3xl text-black mb-4">
+              LLM TOKENIZER
+            </h3>
+
+            <div class="space-y-4 my-6">
+              <div class="border-l-2 border-black pl-4">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-muted mb-1">THE PROBLEM</h4>
+                <p class="text-xs sm:text-sm font-light text-body leading-relaxed">
+                  Understanding how Large Language Models split raw natural text into subword tokens and numeric embeddings is opaque without hands-on visualization.
+                </p>
+              </div>
+              <div class="border-l-2 border-borderLine pl-4">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-muted mb-1">WHAT I BUILT</h4>
+                <p class="text-xs sm:text-sm font-light text-body leading-relaxed">
+                  Created an interactive web app that demonstrates subword token splitting, token counting, vocabulary lookup, and character mapping in real time.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6 border-t border-borderLine/40 flex flex-wrap items-center justify-between gap-4">
+            <span class="text-xs font-mono text-muted">STACK: JS &middot; TOKENIZATION &middot; AI</span>
+            <a href="https://llm-tokeniser-gold.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-heartbeat inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-borderLine text-xs font-bold uppercase tracking-tight text-black">
+              <span>OPEN TOKENIZER</span>
+              <span class="text-base leading-none">&nearr;</span>
+            </a>
+          </div>
+        </article>
+
+        <!-- 3. Perplexity Explorer -->
+        <article class="lg:col-span-6 border-r border-b border-borderLine p-6 sm:p-10 bg-white/40 hover:bg-white transition-colors flex flex-col justify-between">
+          <div>
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-6">
+              <span class="px-3 py-1 rounded-full border border-borderLine text-xs font-bold uppercase tracking-wider">
+                AI Discovery App
+              </span>
+              <span class="text-xs font-mono text-muted">PROJECT 03</span>
+            </div>
+
+            <h3 class="heading-display font-black text-2xl sm:text-3xl text-black mb-4">
+              PERPLEXITY EXPLORER
+            </h3>
+
+            <div class="space-y-4 my-6">
+              <div class="border-l-2 border-black pl-4">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-muted mb-1">THE PROBLEM</h4>
+                <p class="text-xs sm:text-sm font-light text-body leading-relaxed">
+                  Traditional web search presents cluttered link lists rather than structured, conversational query synthesis and exploration.
+                </p>
+              </div>
+              <div class="border-l-2 border-borderLine pl-4">
+                <h4 class="text-xs font-bold uppercase tracking-wider text-muted mb-1">WHAT I BUILT</h4>
+                <p class="text-xs sm:text-sm font-light text-body leading-relaxed">
+                  Engineered a focused discovery and knowledge retrieval web application inspired by Perplexity AI for clean query synthesis.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="pt-6 border-t border-borderLine/40 flex flex-wrap items-center justify-between gap-4">
+            <span class="text-xs font-mono text-muted">STACK: JS &middot; CONVERSATIONAL UI</span>
+            <a href="https://perplexity-explorer-blond.vercel.app" target="_blank" rel="noopener noreferrer" class="btn-heartbeat inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-borderLine text-xs font-bold uppercase tracking-tight text-black">
+              <span>LAUNCH EXPLORER</span>
+              <span class="text-base leading-none">&nearr;</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 02 / COMPETITIONS & HACKATHONS -->
+    <section id="competitions" class="py-16 sm:py-24 border-b border-borderLine">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-muted font-light">[ 02 / INITIATIVES &amp; CHALLENGES ]</span>
+          <h2 class="heading-display font-black text-3xl sm:text-5xl lg:text-6xl text-black mt-2">
+            COMPETITIONS &amp; PROGRAMS
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-muted font-light max-w-md">
+          Structured problem solving, university competitions, and ambassador programs.
+        </p>
+      </div>
+
+      <!-- 4-Column Collapsed Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border-t border-l border-borderLine">
+
+        <!-- Case Consilium 2026 -->
+        <div class="border-r border-b border-borderLine p-6 bg-white/40 hover:bg-white transition-colors flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-[10px] text-muted uppercase tracking-wider block mb-3">01 / CASE COMPETITION</span>
+            <h3 class="heading-display font-black text-xl text-black mb-3">
+              CASE CONSILIUM 2026
+            </h3>
+            <p class="text-xs font-bold text-muted mb-2">BITS Goa Consulting Club</p>
+            <p class="text-xs font-light text-body leading-relaxed mb-6">
+              Competed in structured business and strategic case problems under competitive constraints, formulating rigorous diagnostic solutions.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-borderLine/40">
+            <a href="https://app.truscholar.io/profile?credId=6b0561f984ff808d7a680718" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs font-bold underline hover:opacity-75">
+              <span>Verify on TruScholar</span>
+              <span>&nearr;</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Fund My Crazy -->
+        <div class="border-r border-b border-borderLine p-6 bg-white/40 hover:bg-white transition-colors flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-[10px] text-muted uppercase tracking-wider block mb-3">02 / GOOGLE PROGRAM</span>
+            <h3 class="heading-display font-black text-xl text-black mb-3">
+              FUND MY CRAZY 2026
+            </h3>
+            <p class="text-xs font-bold text-muted mb-2">Google Student Ambassador Program</p>
+            <p class="text-xs font-light text-body leading-relaxed mb-6">
+              Participated under GSAP 2026 pitching unconventional, high-impact technology concepts and collaborative student initiatives.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-borderLine/40">
+            <span class="text-xs font-mono text-muted">PITCH &middot; INNOVATION</span>
+          </div>
+        </div>
+
+        <!-- Klyth Money Champion -->
+        <div class="border-r border-b border-borderLine p-6 bg-white/40 hover:bg-white transition-colors flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-[10px] text-muted uppercase tracking-wider block mb-3">03 / FINANCE &amp; STRATEGY</span>
+            <h3 class="heading-display font-black text-xl text-black mb-3">
+              KLYTH MONEY CHAMPION 2026
+            </h3>
+            <p class="text-xs font-bold text-muted mb-2">Financial Literacy Competition</p>
+            <p class="text-xs font-light text-body leading-relaxed mb-6">
+              Demonstrated strategic financial decision making, budgeting models, and analytical problem-solving under real-time challenges.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-borderLine/40">
+            <span class="text-xs font-mono text-muted">STRATEGY &middot; FINANCE</span>
+          </div>
+        </div>
+
+        <!-- Python Curriculum (CodeWithHarry) -->
+        <div class="border-r border-b border-borderLine p-6 bg-white/40 hover:bg-white transition-colors flex flex-col justify-between">
+          <div>
+            <span class="font-mono text-[10px] text-muted uppercase tracking-wider block mb-3">04 / CORE FOUNDATION</span>
+            <h3 class="heading-display font-black text-xl text-black mb-3">
+              PYTHON PROGRAMMING MASTERY
+            </h3>
+            <p class="text-xs font-bold text-muted mb-2">CodeWithHarry Comprehensive</p>
+            <p class="text-xs font-light text-body leading-relaxed mb-6">
+              Completed full curriculum covering core syntax, object-oriented programming (OOP), standard libraries, and algorithmic challenges.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-borderLine/40">
+            <span class="text-xs font-mono text-muted">PYTHON &middot; OOP &middot; LOGIC</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 03 / SKILLS & TECHNICAL STACK -->
+    <section id="skills" class="py-16 sm:py-24 border-b border-borderLine">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-12">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-muted font-light">[ 03 / CAPABILITIES ]</span>
+          <h2 class="heading-display font-black text-3xl sm:text-5xl lg:text-6xl text-black mt-2">
+            TECHNICAL REPERTOIRE
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-muted font-light max-w-md">
+          Core languages, libraries, and frameworks actively deployed in projects.
+        </p>
+      </div>
+
+      <!-- Selected Capabilities Grid (Heartbeat Collapsed Seams) -->
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-0 border-t border-l border-borderLine">
+
+        <div class="border-r border-b border-borderLine p-6 sm:p-8 hover:bg-black hover:text-white transition-colors group">
+          <span class="text-xs font-mono text-muted group-hover:text-neutral-400 block mb-2">CORE 01</span>
+          <h3 class="text-xl sm:text-2xl font-black uppercase italic tracking-tight">PYTHON</h3>
+          <p class="text-xs font-light text-muted group-hover:text-neutral-300 mt-2">OOP, Data Structures, Scripting</p>
+        </div>
+
+        <div class="border-r border-b border-borderLine p-6 sm:p-8 hover:bg-black hover:text-white transition-colors group">
+          <span class="text-xs font-mono text-muted group-hover:text-neutral-400 block mb-2">CORE 02</span>
+          <h3 class="text-xl sm:text-2xl font-black uppercase italic tracking-tight">JAVASCRIPT</h3>
+          <p class="text-xs font-light text-muted group-hover:text-neutral-300 mt-2">Interactive Web Apps, DOM, ES6+</p>
+        </div>
+
+        <div class="border-r border-b border-borderLine p-6 sm:p-8 hover:bg-black hover:text-white transition-colors group">
+          <span class="text-xs font-mono text-muted group-hover:text-neutral-400 block mb-2">CORE 03</span>
+          <h3 class="text-xl sm:text-2xl font-black uppercase italic tracking-tight">HTML &amp; CSS</h3>
+          <p class="text-xs font-light text-muted group-hover:text-neutral-300 mt-2">Semantic Web, Tailwind CSS, Responsive</p>
+        </div>
+
+        <div class="border-r border-b border-borderLine p-6 sm:p-8 hover:bg-black hover:text-white transition-colors group">
+          <span class="text-xs font-mono text-muted group-hover:text-neutral-400 block mb-2">CORE 04</span>
+          <h3 class="text-xl sm:text-2xl font-black uppercase italic tracking-tight">C++</h3>
+          <p class="text-xs font-light text-muted group-hover:text-neutral-300 mt-2">Algorithms, Memory, Fundamentals</p>
+        </div>
+
+        <div class="border-r border-b border-borderLine p-6 sm:p-8 hover:bg-black hover:text-white transition-colors group">
+          <span class="text-xs font-mono text-muted group-hover:text-neutral-400 block mb-2">DOMAIN 05</span>
+          <h3 class="text-xl sm:text-2xl font-black uppercase italic tracking-tight">LLM &amp; AI TOOLS</h3>
+          <p class="text-xs font-light text-muted group-hover:text-neutral-300 mt-2">Tokenization, Prompting, Integrations</p>
+        </div>
+
+        <div class="border-r border-b border-borderLine p-6 sm:p-8 hover:bg-black hover:text-white transition-colors group">
+          <span class="text-xs font-mono text-muted group-hover:text-neutral-400 block mb-2">DOMAIN 06</span>
+          <h3 class="text-xl sm:text-2xl font-black uppercase italic tracking-tight">OPEN SOURCE</h3>
+          <p class="text-xs font-light text-muted group-hover:text-neutral-300 mt-2">Hacktoberfest 2026, Git, Collaboration</p>
+        </div>
+
+        <div class="border-r border-b border-borderLine p-6 sm:p-8 hover:bg-black hover:text-white transition-colors group">
+          <span class="text-xs font-mono text-muted group-hover:text-neutral-400 block mb-2">DOMAIN 07</span>
+          <h3 class="text-xl sm:text-2xl font-black uppercase italic tracking-tight">WEB APPS</h3>
+          <p class="text-xs font-light text-muted group-hover:text-neutral-300 mt-2">Vercel Deployment, Cloud Hosting</p>
+        </div>
+
+        <div class="border-r border-b border-borderLine p-6 sm:p-8 hover:bg-black hover:text-white transition-colors group">
+          <span class="text-xs font-mono text-muted group-hover:text-neutral-400 block mb-2">DOMAIN 08</span>
+          <h3 class="text-xl sm:text-2xl font-black uppercase italic tracking-tight">PROBLEM SOLVING</h3>
+          <p class="text-xs font-light text-muted group-hover:text-neutral-300 mt-2">Case Consulting, Financial Strategy</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 04 / MONUMENTAL "LET'S TALK" CTA SECTION -->
+    <section id="contact" class="py-20 sm:py-32 border-b border-borderLine">
+      <div class="border border-borderLine p-8 sm:p-14 bg-white/50">
+        <span class="text-xs uppercase tracking-widest text-muted font-light block mb-4">
+          [ 04 / GET IN TOUCH ]
+        </span>
+
+        <!-- Giant Morphing Call-To-Action Link -->
+        <a href="mailto:abhishekkumar88462@gmail.com" class="group block my-6">
+          <span class="heading-display weight-morph font-thin group-hover:font-black text-5xl sm:text-7xl md:text-8xl lg:text-[7.5rem] xl:text-[9rem] text-black tracking-tight block transition-all">
+            LET'S TALK &nearr;
+          </span>
+        </a>
+
+        <p class="text-sm sm:text-base font-light text-body max-w-2xl leading-relaxed mb-8">
+          Open to software project collaborations, early-stage builder teams, and hackathon partnerships. Reach out directly via email:
+        </p>
+
+        <div class="flex flex-wrap items-center gap-4">
+          <a href="mailto:abhishekkumar88462@gmail.com" class="px-6 py-3 rounded-full bg-black text-white text-xs sm:text-sm font-bold uppercase tracking-tight hover:bg-neutral-800 transition-colors">
+            abhishekkumar88462@gmail.com
+          </a>
+          <button type="button" id="btn-copy-email" class="px-5 py-3 rounded-full border border-borderLine text-xs sm:text-sm font-medium uppercase tracking-tight hover:bg-black hover:text-white transition-colors">
+            Copy Email
+          </button>
+          <span id="copy-status" class="text-xs font-mono text-black"></span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- EDITORIAL FOOTER -->
+  <footer class="max-w-[1920px] mx-auto px-4 sm:px-8 py-12 text-xs font-mono text-muted flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+    <div class="flex items-center gap-3">
+      <span class="inline-flex items-center justify-center w-6 h-6 rounded-full border border-borderLine text-black text-xs font-black italic">
+        ak
+      </span>
+      <span>Abhishek Kumar &middot; B.Tech CSE (AI &amp; ML) &middot; NST ADYPU</span>
+    </div>
+
+    <div class="flex items-center gap-6">
+      <a href="https://lifeos-by-xoders.vercel.app" target="_blank" rel="noopener noreferrer" class="hover:text-black transition-colors">LifeOS</a>
+      <a href="https://llm-tokeniser-gold.vercel.app" target="_blank" rel="noopener noreferrer" class="hover:text-black transition-colors">LLM Tokenizer</a>
+      <a href="https://perplexity-explorer-blond.vercel.app" target="_blank" rel="noopener noreferrer" class="hover:text-black transition-colors">Perplexity</a>
+      <a href="#top" class="hover:text-black transition-colors font-bold">&uarr; TOP</a>
+    </div>
+  </footer>
+
+  <script>
+    // Copy email helper
+    document.getElementById('btn-copy-email').addEventListener('click', function() {
+      const email = 'abhishekkumar88462@gmail.com';
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(email).then(showCopied);
+      } else {
+        const textarea = document.createElement('textarea');
+        textarea.value = email;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        showCopied();
+      }
+    });
+
+    function showCopied() {
+      const el = document.getElementById('copy-status');
+      el.textContent = 'COPIED TO CLIPBOARD ✓';
+      setTimeout(() => {
+        el.textContent = '';
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
